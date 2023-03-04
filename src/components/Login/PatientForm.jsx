@@ -1,14 +1,13 @@
 import styled from "styled-components";
-import PatientID from "../UI/PatientForm/PatientID";
-import PatientID_Input from "../UI/PatientForm/PatientID_Input";
+import TextInput from "../UI/TextInput";
 
-function PatientLogin(props) {
+function PatientForm(props) {
   return (
     <div>
-      <PatientID></PatientID>
-      <PatientID_Input></PatientID_Input>
+      <p>Enter patient ID number:</p>
+      <TextInput></TextInput>
     </div>
   );
 }
 
-export default PatientLogin;
+export default PatientForm;
