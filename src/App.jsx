@@ -1,14 +1,17 @@
 import styled from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
 import ThemeProvider from "./store/ThemeProvider";
+import PatientID from "./components/Patient/LoginPagePatient/PatientID"
+import PatientID_Input from "./components/Patient/LoginPagePatient/PatientID_Input";
+import PatientLogin from "./components/Patient/LoginPagePatient/PatientLogin";
 
 function App() {
   return (
     <ThemeProvider>
       <div className="App">
-        <Style.Paragraph>Hello world</Style.Paragraph>
-      </div>
-    </ThemeProvider>
+        <PatientLogin></PatientLogin>
+      </div>    
+      </ThemeProvider>
   );
 }
 
