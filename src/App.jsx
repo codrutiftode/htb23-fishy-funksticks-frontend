@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
+import RouterProvider from "./store/RouterProvider";
 import ThemeProvider from "./store/ThemeProvider";
 
 function App() {
   return (
     <ThemeProvider>
-      <div className="App">
-        <Style.Paragraph>Hello world</Style.Paragraph>
-      </div>
+      <RouterProvider />
     </ThemeProvider>
   );
 }
