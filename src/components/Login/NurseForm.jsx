@@ -5,9 +5,9 @@ function NurseForm(){
     return(
         <dev>        
         <p>Enter username:</p>
-        <TextInput></TextInput>
-        <p>Enter Password</p>
-        <TextInput></TextInput>
+        <TextInput DEFAULT={"Blah"} SIZE={"0.5em"}></TextInput>
+        <p>Enter password:</p>
+        <TextInput DEFAULT={"Blah Blah"} SIZE={"0.5em"}></TextInput>
         </dev>
 
     )

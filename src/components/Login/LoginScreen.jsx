@@ -1,3 +1,4 @@
+
 import PatientForm from "./PatientForm";
 import NurseForm from "./NurseForm";
 
@@ -6,6 +7,5 @@ function LoginScreen(){
         <NurseForm></NurseForm>
     )
 }
-
 
 export default LoginScreen
