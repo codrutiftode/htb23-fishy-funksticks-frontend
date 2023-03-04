@@ -1,18 +1,11 @@
 import React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-
-const theme = {
-  colors: {
-    primary: "rebeccapurple",
-  },
-  breakpoints: {
-    tablet: 768,
-    desktop: 1024,
-  },
-};
+import constants from "../constants";
 
 export default function ThemeProvider(props) {
   return (
-    <StyledThemeProvider theme={theme}>{props.children}</StyledThemeProvider>
+    <StyledThemeProvider theme={constants.theme}>
+      {props.children}
+    </StyledThemeProvider>
   );
 }
