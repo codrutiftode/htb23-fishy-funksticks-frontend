@@ -2,22 +2,37 @@ import {
   createBrowserRouter,
   RouterProvider as ReactRouterProvider,
 } from "react-router-dom";
-import Landing from "../components/Landing/LandingScreen";
-import Patient from "../components/Patient/PatientScreen";
-import Nurse from "../components/Nurse/NurseScreen";
+import LanguagesScreen from "../components/Languages/LanguagesScreen";
+import PatientScreen from "../components/Patient/PatientScreen";
+import NurseScreen from "../components/Nurse/NurseScreen";
+import OptionsScreen from "../components/Options/OptionsScreen";
+import LoginScreen from "../components/Login/LoginScreen";
+import InfoScreen from "../components/Info/InfoScreen";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Landing />,
+    element: <LanguagesScreen />,
+  },
+  {
+    path: "/login",
+    element: <LoginScreen />,
   },
   {
     path: "/patient",
-    element: <Patient />,
+    element: <PatientScreen />,
   },
   {
     path: "/nurse",
-    element: <Nurse />,
+    element: <NurseScreen />,
+  },
+  {
+    path: "/options",
+    element: <OptionsScreen />
+  },
+  {
+    path: "/info",
+    element: <InfoScreen />
   },
 ]);
 
