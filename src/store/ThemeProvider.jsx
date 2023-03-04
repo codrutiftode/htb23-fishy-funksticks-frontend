@@ -2,9 +2,9 @@ import React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
 const theme = {
-    colors: {
-        primary: "rebeccapurple",
-    },
+  colors: {
+    primary: "rebeccapurple",
+  },
   breakpoints: {
     tablet: 768,
     desktop: 1024,
