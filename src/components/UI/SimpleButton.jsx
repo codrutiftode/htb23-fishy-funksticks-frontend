@@ -38,6 +38,7 @@ const Style = {
             9.8px 10.1px 27.9px rgba(0, 0, 0, 0.06),
             18.4px 18.8px 52.2px rgba(0, 0, 0, 0.072),
             44px 45px 125px rgba(0, 0, 0, 0.1);
-      }
+      
         `
+
 }
