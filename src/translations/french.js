@@ -1,36 +1,36 @@
 export const frenchTranslations = {
   enterPatientID: "Saisissez l'identifiant du patient:",
   info: "Info",
-  info1: "Bonjour mon cher ami.",
-  info2: "Bienvenue dans la merveilleuse application qu'est cette beauté. Il a été développé par les gars fantastiques de Fishy Funksticks. Voici le bas:",
-  info3: "Vous pouvez appuyer sur un bouton sur votre écran d'accueil pour ajouter votre demande au système. Nous décidons ensuite de son importance et le confions éventuellement à l'une de nos adorables infirmières qui viendra vous apporter toute l'aide dont vous avez besoin. Vous pouvez ajouter des informations sur vous-même dans le menu des options, ainsi que modifier l'apparence, la sensation et l'odeur du site.",
-  info4:  "Mais ouais, c'est à peu près tout. Paix dehors.",
+  info1: "Bonjour mon cher.e ami.e.",
+  info2: "Bienvenue sur la merveilleuse application qu'est cette beauté. Elle a été développée par la fantastique équipe des Fishy Funksticks. Voici la base:",
+  info3: "Vous pouvez appuyer sur un bouton sur la page d'accueil pour ajouter votre demande au système. Elle est classée selon son importance et nous la confions à l'une de nos adorables infirmières qui viendra vous apporter toute l'aide dont vous aurez besoin. Vous pouvez ajouter vos informations dans le menu des options, ainsi que modifier l'apparence du site.",
+  info4:  "Voilà, c'est tout. À plus.",
 
   LanguagePref:  "PLangue préférée...",
 
   logout:  "Se déconnecter",
 
   nurse:  "INFIRMIÈRE/IER",
-  patient:  "PATIENTE/ENT",
-  iama: "Je suis un...",
+  patient:  "PATIENT/E",
+  iama: "Je suis un/e...",
   submit: "SOUMETTRE",
 
 
   username:  "Saisissez votre nom d'utilisateur:",
   password:  "Entrer le mot de passe:",
   invalidcred: "Identifiants invalides, réessayez!",
-  invalidval: "Veuillez entrer des valeurs valides.",
+  invalidval: "Veuillez entrer des données valides.",
 
-  patientid:  "ID du patient", 
+  patientid:  "Identité du patient", 
   requesttype:  "Type de demande", 
-  extrainfo: "Informaitons supplémentaires",
-  done:  "marque comme Terminé",
+  extrainfo: "Informations supplémentaires",
+  done:  "Marquer comme Fait",
 
   yournexttask:  "Votre prochaine tâche",
-  break:  "Casser",
+  break:  "Je suis en pause",
   schedulebreak:  "Horaire de pause",
 
-  timeblockedout:  "À quelle heure voulez-vous bloquer?",
+  timeblockedout:  "Quand voulez-vous partir?",
   leave:  "Partir:",
   return:  "Retour:",
 
@@ -39,7 +39,7 @@ export const frenchTranslations = {
   ESL:  "Anglais en seconde langue",
   other:  "Other",
   dark:  "SOMBRE",
-  light:  "LUMIÈRE",
+  light:  "CLAIR",
   options:  "Choix",
   Iam:  "Je suis...",
 
@@ -53,6 +53,6 @@ export const frenchTranslations = {
   infoicon:  "Info",
 
   extrainfo:  "Souhaitez-vous ajouter des informations supplémentaires ?",
-  sendrequest:  "Envoyer une demande",
+  sendrequest:  "Envoyer la demande",
   adddeets:  "Ajouter plus de détails ici",
 };

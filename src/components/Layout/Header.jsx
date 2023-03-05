@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useTranslate } from "../../scripts/useTranslate";
+import { useEffect } from "react";
+import { useState } from "react";
 
 
 
 function Header({}) {
 const t = useTranslate();
 const navigate = useNavigate();
+
+const [state, setState] = useState(false)
+
+useEffect(()=>{setInterval(()=>{setState((new Date()).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})+":"+(new Date()).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}))},1000)},[])
 
 const homeClickHandler = () => {
     navigate("/");
@@ -16,7 +22,7 @@ const homeClickHandler = () => {
     return <Style.Container>
                 <Style.HomeButton onClick={homeClickHandler} >
           <span class="material-symbols-outlined">{t("logout")}</span></Style.HomeButton>
-                <Style.Clock>{(new Date()).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{(new Date()).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} </Style.Clock>
+                <Style.Clock>{state}</Style.Clock>
             </Style.Container>
 }
 
