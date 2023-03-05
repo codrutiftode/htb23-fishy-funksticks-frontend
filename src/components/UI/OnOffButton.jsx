@@ -43,6 +43,7 @@ const Style = {
        transition-duration: 0.4s;
        :hover {
            background-image: ${props => props.IsOn ? props.GRADIENT1 : props.GRADIENT2};
+           cursor: pointer;
         }
     `
 
