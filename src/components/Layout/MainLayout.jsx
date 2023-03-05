@@ -2,7 +2,7 @@ import Header from "./Header";
 
 function MainLayout(props) {
     return <div>
-            <Header />
+            <Header/> // need to add home button option
             {props.children}
             </div>
 }
