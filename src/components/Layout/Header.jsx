@@ -10,7 +10,8 @@ const homeClickHandler = () => {
     navigate("/");
 };
     return <Style.Container>
-                <Style.HomeButton onClick={homeClickHandler} ><Style.HomeButtonImg src="assets/home.png"/></Style.HomeButton>
+                <Style.HomeButton onClick={homeClickHandler} >
+          <span class="material-symbols-outlined">logout</span></Style.HomeButton>
                 <Style.Clock>{(new Date()).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{(new Date()).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} </Style.Clock>
             </Style.Container>
 }
@@ -26,6 +27,7 @@ const Style = {
         padding: 5px;
         border: 3px solid ${(props) => props.theme.colors.secondary};;
         border-radius:20%;
+        color: ${(props) => props.theme.colors.secondary};
         `,
 
     HomeButtonImg: styled.img`
