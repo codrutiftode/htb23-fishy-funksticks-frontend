@@ -13,6 +13,7 @@ export const romanianTranslations = {
     nurse:  "ASISTENT MEDICAL",
     patient:  "RABDATOR",
     iama: "Sunt un...",
+    submit: "TRIMITE",
   
     username:  "Introduceti numele de utilizator:",
     password:  "Introdu parola:",
