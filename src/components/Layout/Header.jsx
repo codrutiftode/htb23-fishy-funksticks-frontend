@@ -47,6 +47,7 @@ const Style = {
         background: ${(props) => props.theme.colors.primary};
         height: 10vh;
         padding: 15px;
+        margin-bottom: 10%;
     `,
 
 }
