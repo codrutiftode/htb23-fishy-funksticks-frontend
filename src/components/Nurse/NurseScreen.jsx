@@ -99,6 +99,7 @@ const Style = {
     display: flex;
     padding: 1rem;
     flex-direction: column;
+    color: ${(props) => props.theme.colors.defaultfont};
   `,
 
   OtherOptions: styled.div`
@@ -108,5 +109,6 @@ const Style = {
     justify-content: center;
     padding: 1rem 20%;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
+    color: ${(props) => props.theme.colors.defaultfont};
   `,
 };

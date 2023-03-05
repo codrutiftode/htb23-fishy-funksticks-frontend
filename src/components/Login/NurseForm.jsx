@@ -102,6 +102,7 @@ const Style = {
     justify-contents: space-inbetween;
     text-align: center;
     font-size: 3vh;
+    color: ${(props) => props.theme.colors.defaultfont};
   `,
 
   ErrorMessage: styled.p`
