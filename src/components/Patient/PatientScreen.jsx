@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
 import PopupButton from "../UI/PopupButton";
 import MenuOption from "./MenuOption";
@@ -43,6 +43,7 @@ const buttonsData = [
 
 function PatientScreen(props) {
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const [CurrentButtType, SetCurrentButtType] = useState(null); // to do the state
 
