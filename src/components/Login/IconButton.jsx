@@ -37,5 +37,6 @@ const Style = {
         color: ${(props) => props.theme.colors.secondary};
         font-weight: bold;
         text-align: center;
+        font-size: 5vw;
     `
 }

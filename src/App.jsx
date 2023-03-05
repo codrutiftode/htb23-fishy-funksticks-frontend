@@ -11,7 +11,6 @@ function App() {
   return (
     <ThemeProvider>
       <RouterProvider />
-      <LoginScreen userIsNurse={false}/>
     </ThemeProvider>
   );
 }

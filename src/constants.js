@@ -2,7 +2,7 @@ const constants = {
   theme: {
     colors: {
       primary: "rebeccapurple",
-      secondary: "blue",
+      secondary: "white",
     },
     breakpoints: {
       tablet: 768,

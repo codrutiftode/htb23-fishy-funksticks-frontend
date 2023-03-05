@@ -8,10 +8,11 @@ import Header from "../Header/Header";
 function LoginScreen(userIsNurse)
 {
     return <div><Style.IconButtonContainer>
-                <IconButton buttonText={"NURSE"} imgsrc={"doctor.jpg"}/>
-                <IconButton buttonText={"PATIENT"} imgsrc={"patient.jpg"}/>
+                <IconButton buttonText={"NURSE"} imgsrc={"nurse_emoji.png"}/>
+                <IconButton buttonText={"PATIENT"} imgsrc={"sick_emoji.png"}/>
          </Style.IconButtonContainer>
-         {/* {userIsNurse?<NurseForm/>:<PatientForm/>}  */}
+
+         <Style.FormContainer>{userIsNurse?<NurseForm/>:<PatientForm/>}</Style.FormContainer>
          </div>
 }
 
@@ -25,7 +26,11 @@ const Style = {
     IconButtonContainer: styled.div`
         display: flex;
         justify-content: center;
-        margin-bottom: 5%;
+        margin-bottom: 10%;
+    `,
+    FormContainer: styled.div`
+    display: flex;
+    justify-content: center;
     `
 }
 
