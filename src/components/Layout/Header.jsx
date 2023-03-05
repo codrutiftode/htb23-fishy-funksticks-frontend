@@ -25,7 +25,7 @@ const Style = {
     HomeButton: styled.div`
         display: inline-block;
         padding: 5px;
-        border: 3px solid ${(props) => props.theme.colors.secondary};;
+        border: 3px solid ${(props) => props.theme.colors.secondary};
         border-radius:20%;
         color: ${(props) => props.theme.colors.secondary};
         `,
