@@ -13,10 +13,13 @@ export const englishTranslations = {
   nurse:  "NURSE",
   patient:  "PATIENT",
   iama: "I am a...",
+  submit: "SUBMIT",
+
 
   username:  "Enter username:",
   password:  "Enter password:",
-  submit:  "SUBMIT",
+  invalidcred: "Invalid credentials, try again!",
+  invalidval: "Please input valid values.",
 
   patientid:  "Patient ID", 
   requesttype:  "Type of request", 

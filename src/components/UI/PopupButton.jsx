@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 function PopupButton({padding, width, height, fontSize, 
-  borderRadius, gradient, name, onClick, materialIcon}) {
+  borderRadius, gradient, background, border, color, name, onClick, materialIcon}) {
   return (
-    
+    <div>
     <Style.PopupButton onClick={onClick} SIZE={padding} WIDTH={width} HEIGHT={height}
-    FONTSIZE={fontSize} BORDERRADIUS={borderRadius} GRADIENT={gradient}> 
+    FONTSIZE={fontSize} BORDERRADIUS={borderRadius} BACKGROUND={background}
+    GRADIENT={gradient} BORDER={border} COLOR={color}> 
       <span class="material-symbols-outlined">{materialIcon}</span>
       <p>{name}</p>
     </Style.PopupButton>
-    
+    </div>
   );
   }
 
@@ -27,12 +28,12 @@ const Style = {
     height: ${ props => props.HEIGHT};
 
     font-family: ${props => props.theme.font.fontFamily};
-    color: ${props => props.theme.font.color};
+    color: ${props => props.COLOR};
     font-size: ${props => props.FONTSIZE};
 
     background-color: ${props => props.BACKGROUND}; 
     border-radius: ${props => props.BORDERRADIUS};
-    border: 5px outset rgb(68, 34, 102);
+    border: ${props => props.BORDER};
     box-shadow:
         1.2px 1.2px 3.5px rgba(0, 0, 0, 0.028),
         2.9px 3px 8.3px rgba(0, 0, 0, 0.04),
@@ -44,7 +45,6 @@ const Style = {
     transition-duration: 0.4s;
     :hover {
         background-image: ${props => props.GRADIENT};
-        color: ${props => props.TEXTGRADIENT};
     }
 
 

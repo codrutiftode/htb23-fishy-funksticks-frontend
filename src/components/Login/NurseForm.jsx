@@ -9,6 +9,7 @@ import { useTranslate } from "../../scripts/useTranslate";
 
 
 function NurseForm() {
+  const t = useTranslate();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,7 +32,7 @@ function NurseForm() {
   const ClickHandler = async () => {
     const isValid = validateInput();
     if (!isValid) {
-      setErrorMessage("Please input valid values.");
+      setErrorMessage(t("invalidval"));
       return;
     }
 
@@ -46,7 +47,7 @@ function NurseForm() {
     }
     catch(err) {
       console.error(err);
-      setErrorMessage("Invalid credentials, try again!");
+      setErrorMessage(t("invalidcred"));
       return;
     }
     navigate("/nurse"); // needs to only execute if authenticated
@@ -54,7 +55,7 @@ function NurseForm() {
 
   return (
     <Style.Form>
-      <p>Enter username:</p>
+      <p>{t("username")}</p>
       <Style.Input>
         <TextInput
           DEFAULT={"Blah"}
@@ -63,7 +64,7 @@ function NurseForm() {
           onTextChange={updateUsername}
         ></TextInput>
       </Style.Input>
-      <p>Enter password:</p>
+      <p>{t("password")}</p>
       <Style.Input>
         <TextInput
           DEFAULT={"Blah Blah"}
@@ -74,7 +75,7 @@ function NurseForm() {
       </Style.Input>
       {errorMessage && <Style.ErrorMessage>{errorMessage}</Style.ErrorMessage>}
       <SimpleButton
-        name={"Submit"}
+        name={t("submit")}
         ClickHandler={ClickHandler}
         width={"5em"}
         height={"2em"}

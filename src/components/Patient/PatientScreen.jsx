@@ -10,7 +10,7 @@ import MainLayout from "../Layout/MainLayout";
 import { useTranslate } from "../../scripts/useTranslate";
 
 
-function PatientScreen(props) {
+function PatientScreen() {
   const t = useTranslate();
 
   const buttonsData = [
@@ -46,10 +46,6 @@ function PatientScreen(props) {
     },
   ];
 
-
-
-
-
   const navigate = useNavigate();
   const theme = useTheme();
 
@@ -76,13 +72,22 @@ function PatientScreen(props) {
       <Style.HelpOptions>
         {buttonsData.map((buttonData, index) => {
           return (
-            <Style.GridItem index={index} BACKGROUND={theme.colors.tertiary} 
-            GRADIENT={"linear-gradient(to right,rgb(182,223,227)0%, rgb(152,210,216)50%, rgb(136,189,194)100%)"}>
+            <Style.GridItem index={index}>
               <PopupButton
                 key={buttonData.type}
                 name={buttonData.name}
                 materialIcon={buttonData.materialIcon}
                 onClick={() => GeneralClickHandler(buttonData.type)}
+                background={theme.colors.tertiary} 
+                gradient={"linear-gradient(to right,rgb(182,223,227)0%, rgb(152,210,216)50%, rgb(136,189,194)100%)"}
+                width = {"100%"}
+                height = {"100%"}
+                fontSize = {"18px"}
+                borderRadius = {"10px"}
+                color = {"black"} 
+                padding = {"10% 40%"}
+                border = {"3px outset rgba(68, 34, 102, 0.5)"}
+                //FIXME: emergency button is smaller than others
               />
             </Style.GridItem>
           );
@@ -94,12 +99,20 @@ function PatientScreen(props) {
           alt="Settings icon"
           src="/assets/settings-solid.svg"
           onClick={settingsClickHandler}
+          background = {theme.colors.primary}
+          fontSize = "12px"
+          borderRadius = "10px"
+          gradient = "linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"
         ></MenuOption>
         <MenuOption
           name={t("infoicon")}
           alt="Info icon"
           src="/assets/info-circle-outline.svg"
           onClick={infoClickHandler}
+          background = {theme.colors.primary}
+          fontSize = "12px"
+          borderRadius = "10px"
+          gradient = "linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"
         ></MenuOption>
       </Style.MenuOptions>
 
@@ -164,28 +177,5 @@ const Style = {
     animation: ${gridItemAnim} 0.3s ease-in-out forwards;
     animation-delay: ${(props) => props.index * 0.1}s;
 
-    & > button {
-      width: 100%;
-      height: 100%;
-      font-family: ${props => props.theme.font.fontFamily};
-      color: "black";
-      font-size: 18px;
-
-      background-color: ${props => props.BACKGROUND}; 
-      border-radius: 10px;
-      border: 3px outset rgba(68, 34, 102, 0.5);
-      box-shadow:
-        1.2px 1.2px 3.5px rgba(0, 0, 0, 0.028),
-        2.9px 3px 8.3px rgba(0, 0, 0, 0.04),
-        5.5px 5.6px 15.7px rgba(0, 0, 0, 0.05),
-        9.8px 10.1px 27.9px rgba(0, 0, 0, 0.06),
-        18.4px 18.8px 52.2px rgba(0, 0, 0, 0.072),
-        44px 45px 125px rgba(0, 0, 0, 0.1);
-
-      transition-duration: 0.4s;
-      :hover {
-        background-image: ${props => props.GRADIENT};
-    }
-    }
   `,
 };
