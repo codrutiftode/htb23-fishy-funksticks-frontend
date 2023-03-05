@@ -2,8 +2,9 @@ import IconButton from "./IconButton";
 import styled from "styled-components";
 import NurseForm from "./NurseForm";
 import PatientForm from "./PatientForm";
-import Header from "../Header/Header";
+import Header from "../Layout/Header";
 import { useState } from "react";
+import MainLayout from "../Layout/MainLayout";
 
 function LoginScreen()
 {
@@ -18,13 +19,13 @@ function LoginScreen()
         setState("patient")
     }
 
-    return <div><Style.IconButtonContainer>
-                <IconButton iconButtonClick={clickNurse} buttonText={"NURSE"} imgsrc={"nurse_emoji.png"} isDisabled={state=="patient"}/>
-                <IconButton iconButtonClick={clickPatient} buttonText={"PATIENT"} imgsrc={"sick_emoji.png"} isDisabled={state=="nurse"}/>
+    return <MainLayout><Style.IconButtonContainer>
+                <IconButton iconButtonClick={clickNurse} buttonText={"NURSE"} imgsrc={"assets/nurse_emoji.png"} isDisabled={state=="patient"}/>
+                <IconButton iconButtonClick={clickPatient} buttonText={"PATIENT"} imgsrc={"assets/sick_emoji.png"} isDisabled={state=="nurse"}/>
          </Style.IconButtonContainer>
 
          <Style.FormContainer>{(state=="nurse"?<NurseForm/>:(state=="patient"?<PatientForm/>:<div/>))}</Style.FormContainer>
-         </div>
+         </MainLayout>
 }
 
 export default LoginScreen

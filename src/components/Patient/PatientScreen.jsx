@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
+import MainLayout from "../Layout/MainLayout";
 import PopupButton from "../UI/PopupButton";
 import MenuOption from "./MenuOption";
 
@@ -49,6 +50,7 @@ function PatientScreen() {
   };
 
   return (
+    <MainLayout>
     <Style.PatientScreen>
       <h2>Choose an option</h2>
       <Style.HelpOptions>
@@ -79,6 +81,7 @@ function PatientScreen() {
         ></MenuOption>
       </Style.MenuOptions>
     </Style.PatientScreen>
+    </MainLayout>
   );
 }
 

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
+import Header from "./components/Layout/Header";
 import LoginScreen from "./components/Login/LoginScreen";
 import RouterProvider from "./store/RouterProvider";
 import ThemeProvider from "./store/ThemeProvider";
