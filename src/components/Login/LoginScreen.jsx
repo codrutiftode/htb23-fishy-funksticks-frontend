@@ -36,6 +36,7 @@ const Style = {
     IamA: styled.div`
         text-align: center;
         font-size: 5vh;
+        margin-top: 3vh;
     `,
 
     IconButton: styled.div`
@@ -46,7 +47,7 @@ const Style = {
         display: flex;
         justify-content: center;
         margin-bottom: 10%;
-        margin-top: 10%;
+        margin-top: 3vh;
     `,
     FormContainer: styled.div`
     display: flex;

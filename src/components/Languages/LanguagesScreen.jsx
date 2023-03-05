@@ -34,6 +34,7 @@ const Style = {
   question: styled.div`
     text-align: center;
     font-size: min(5vh, 10vw);
+    margin-top: 10vh;
   `,
 
   LanguagesList: styled.div`
