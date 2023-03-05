@@ -39,7 +39,6 @@ const Style = {
             44px 45px 125px rgba(0, 0, 0, 0.1);
 
         transition-duration: 0.4s;
-        
         :hover {
             background-image: ${props => props.GRADIENT};
             color: ${props => props.TEXTGRADIENT};
