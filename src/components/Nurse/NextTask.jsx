@@ -5,8 +5,12 @@ function NextTask() {
   return (
     <Style.NextTask>
       <Style.Vertical>
-        <h3>Next Task</h3>
-        <p>Task Name</p>
+        <h3>Patient ID</h3>
+        <p>314986243</p>
+        <h3>Type of request</h3>
+        <p>Toilet</p>
+        <h3>Extra info</h3>
+        <p>Just a number 1 please</p>
       </Style.Vertical>
       <SimpleButton padding={"2rem"} name="Mark as done" />
     </Style.NextTask>
