@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 
-function Header() {
+function Header({}) {
 
 const navigate = useNavigate();
 
 const homeClickHandler = () => {
     navigate("/");
 };
+
+//only if HomeButton = true
     return <Style.Container>
                 <Style.HomeButton onClick={homeClickHandler} >
           <span class="material-symbols-outlined">logout</span></Style.HomeButton>
