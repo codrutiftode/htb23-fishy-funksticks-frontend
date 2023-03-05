@@ -1,18 +1,21 @@
 import styled from "styled-components";
 import SimpleButton from "../UI/SimpleButton";
+import { useTranslate } from "../../scripts/useTranslate";
 
-function NextTask() {
+
+function NextTask({id, type, extrainfo}) {
+  const t = useTranslate();
   return (
     <Style.NextTask>
       <Style.Vertical>
-        <h3>Patient ID</h3>
-        <p>314986243</p>
-        <h3>Type of request</h3>
-        <p>Toilet</p>
-        <h3>Extra info</h3>
-        <p>Just a number 1 please</p>
+      <h3>{t("patientid")}</h3>
+        <p>{id}</p>
+        <h3>{t("requesttype")}</h3>
+        <p>{type}</p>
+        <h3>{t("extrainfo")}</h3>
+        <p>{extrainfo}</p>
       </Style.Vertical>
-      <SimpleButton padding={"2rem"} name="Mark as done" />
+      <SimpleButton padding={"1rem"} name={t("done")} fontSize={"1em"} borderRadius={"1em"} background={(props) => props.theme.colors.primary} />
     </Style.NextTask>
   );
 }

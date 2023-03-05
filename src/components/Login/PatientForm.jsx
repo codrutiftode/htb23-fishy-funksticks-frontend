@@ -3,6 +3,7 @@ import TextInput from "../UI/TextInput";
 import SimpleButton from "../UI/SimpleButton";
 import { useNavigate } from "react-router-dom";
 import { useTranslate } from "../../scripts/useTranslate";
+import { useState } from "react";
 
 function PatientForm(props) {
   const navigate = useNavigate();

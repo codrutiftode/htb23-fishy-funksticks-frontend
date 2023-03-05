@@ -3,27 +3,35 @@ import styled from "styled-components";
 import { LocalStorage } from "../../scripts/localStorage";
 import MultiChoice from "../UI/MultiChoice";
 import OnOffButton from "../UI/OnOffButton";
+import { useTranslate } from "../../scripts/useTranslate";
 
-const POSSIBLE_CHOICES = [
-  {
-    name: "Neurodiverse",
-    isActive: false,
-  },
-  {
-    name: "Nonverbal",
-    isActive: false,
-  },
-  {
-    name: "English as a second language",
-    isActive: false,
-  },
-  {
-    name: "Other",
-    isActive: false,
-  },
-];
+
 
 function OptionsScreen() {
+  const t = useTranslate();
+
+  const POSSIBLE_CHOICES = [
+    {
+      name: t("neurodiverse"),
+      isActive: false,
+    },
+    {
+      name: t("nonverbal"),
+      isActive: false,
+    },
+    {
+      name: t("ESL"),
+      isActive: false,
+    },
+    {
+      name: t("other"),
+      isActive: false,
+    },
+  ];
+
+
+
+
   const [choices, setChoices] = useState(POSSIBLE_CHOICES);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
@@ -74,16 +82,16 @@ function OptionsScreen() {
     LocalStorage.set("darkTheme", !isDarkTheme);
   };
 
-  const themeButtonText = isDarkTheme ? "Light" : "Dark";
+  const themeButtonText = isDarkTheme ? t("light") : t("dark");
   return (
     <Style.OptionsScreen>
       <Style.OptionsHead>
         <button onClick={goBackHandler}>
           <span class="material-symbols-outlined">arrow_back</span>
         </button>
-        <h1>Options</h1>
+        <h1>{t("options")}</h1>
       </Style.OptionsHead>
-      <h3>I am...</h3>
+      <h3>{t("Iam")}</h3>
       <MultiChoice
         choices={choices}
         addChoice={addChoice}

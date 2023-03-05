@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { useState } from "react";
 import { ApiController } from "../../api/apiController";
 import constants from "../../constants";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function NurseForm() {
   const navigate = useNavigate();

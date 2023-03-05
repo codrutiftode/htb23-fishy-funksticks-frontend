@@ -5,8 +5,10 @@ import { useEffect, useState } from "react";
 import { LocalStorage } from "../../scripts/localStorage";
 import MultiChoice from "../UI/MultiChoice";
 import OnOffButton from "../UI/OnOffButton";
+import { useTranslate } from "../../scripts/useTranslate";
 
 function InfoScreen() {
+  const t = useTranslate();
   const navigate = useNavigate();
   const theme = useTheme();
 
@@ -21,15 +23,12 @@ function InfoScreen() {
         <button onClick={goBackHandler}>
           <span class="material-symbols-outlined">arrow_back</span>
         </button>
-        <h1>Info</h1>
+        <h1>{t("info")}</h1>
         
       </Style.OptionsHead>
-      <Style.P>Hello my dear friend. <br/><br/>Welcome to the wonderful app that is this beauty. It was developed by the fantastic
-          guys over at Fishy Funksticks. Here's the low down:<br/><br/>
-          You can slap a button on your home screen to add your request to the system. We then decide how important 
-          it is, and eventually give it to one of our lovely nurses who will come and give you all the help you need.
-          You can add info about yourself in the options menu, as well as change how the site looks, feels and smells.
-          <br/><br/>But ya, that's about it. Peace out.
+      <Style.P> {t("info1")} <br/><br/> {t("info2")} <br/><br/>
+          {t("info3")}
+          <br/><br/>{t("info4")}
         </Style.P>
         <Style.btndiv>
         <SimpleButton name={"Fun Button!"} width={"10em"} height={"4em"} fontSize={"1em"} borderRadius={"1em"} background={(props) => props.theme.colors.primary}></SimpleButton>

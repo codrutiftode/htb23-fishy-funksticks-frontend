@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
 import PopupButton from "../UI/PopupButton";
 import MenuOption from "./MenuOption";
@@ -7,42 +7,51 @@ import RequestPopup from "./RequestPopup";
 import Popup from "../UI/Popup";
 import { useState } from "react";
 import MainLayout from "../Layout/MainLayout";
+import { useTranslate } from "../../scripts/useTranslate";
 
-const buttonsData = [
-  {
-    name: "Get food",
-    type: "food",
-    materialIcon: "lunch_dining",
-  },
-  {
-    name: "Get water",
-    type: "water",
-    materialIcon: "local_drink",
-  },
-  {
-    name: "Go toilet",
-    type: "toilet",
-    materialIcon: "bathroom",
-  },
-  {
-    name: "Get medication",
-    type: "medication",
-    materialIcon: "healing",
-  },
-  {
-    name: "Physical assistance",
-    type: "physical_assistance",
-    materialIcon: "accessibility",
-  },
-  {
-    name: "Emergency",
-    type: "emergency",
-    materialIcon: "emergency_home",
-  },
-];
 
 function PatientScreen(props) {
+  const t = useTranslate();
+
+  const buttonsData = [
+    {
+      name: t("food"),
+      type: "food",
+      materialIcon: "lunch_dining",
+    },
+    {
+      name: t("water"),
+      type: "water",
+      materialIcon: "local_drink",
+    },
+    {
+      name: t("toilet"),
+      type: "toilet",
+      materialIcon: "bathroom",
+    },
+    {
+      name: t("meds"),
+      type: "medication",
+      materialIcon: "healing",
+    },
+    {
+      name: t("assist"),
+      type: "physical_assistance",
+      materialIcon: "accessibility",
+    },
+    {
+      name: t("emergency"),
+      type: "emergency",
+      materialIcon: "emergency_home",
+    },
+  ];
+
+
+
+
+
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const [CurrentButtType, SetCurrentButtType] = useState(null); // to do the state
 
@@ -67,7 +76,7 @@ function PatientScreen(props) {
       <Style.HelpOptions>
         {buttonsData.map((buttonData, index) => {
           return (
-            <Style.GridItem index={index} BACKGROUND={"rgb(152,210,216)"} 
+            <Style.GridItem index={index} BACKGROUND={theme.colors.tertiary} 
             GRADIENT={"linear-gradient(to right,rgb(182,223,227)0%, rgb(152,210,216)50%, rgb(136,189,194)100%)"}>
               <PopupButton
                 key={buttonData.type}
@@ -81,13 +90,13 @@ function PatientScreen(props) {
       </Style.HelpOptions>
       <Style.MenuOptions>
         <MenuOption
-          name="Settings"
+          name={t("settings")}
           alt="Settings icon"
           src="/assets/settings-solid.svg"
           onClick={settingsClickHandler}
         ></MenuOption>
         <MenuOption
-          name="Info"
+          name={t("infoicon")}
           alt="Info icon"
           src="/assets/info-circle-outline.svg"
           onClick={infoClickHandler}

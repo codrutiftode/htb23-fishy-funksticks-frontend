@@ -6,8 +6,11 @@ import NextTask from "./NextTask";
 import MainLayout from "../Layout/MainLayout";
 import Popup from "../UI/Popup";
 import ScheduledBreakPopup from "./ScheduledBreakPopup";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function NurseScreen() {
+  const t = useTranslate();
   const [Break, SetBreak] = useState(false);
   const [popupShown, setPopupShown] = useState(false);
 
@@ -23,15 +26,29 @@ function NurseScreen() {
     <MainLayout>
       <Style.NurseScreen>
         <h2>[Nurse Name]</h2>
-        <h3>Your next task</h3>
+        <h3>{t("yournexttask")}</h3>
         <NextTask />
         <Style.OtherOptions>
           <OnOffButton
-            NAME={"Break"}
+            NAME={t("break")}
             STATE={Break}
             SetState={() => SetBreak((prev) => !prev)}
+          width={"100px"} 
+          height={"50px"} 
+          fontSize={"12px"} 
+          borderRadius={"7px"}     
+          gradient1={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
+          gradient2={"linear-gradient(to right,rgb(182,223,227)0%, rgb(152,210,216)50%, rgb(136,189,194)100%)"}
           ></OnOffButton>
-          <PopUpButton name={"Schedule break"} onClick={openPopup}></PopUpButton>
+          <PopUpButton 
+          padding={"2rem"}
+          name={t("schedulebreak")} onClick={openPopup}
+          width={"100px"} 
+          height={"50px"} 
+          fontSize={"12px"} 
+          borderRadius={"7px"}     
+          gradient={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
+          ></PopUpButton>
         </Style.OtherOptions>
       </Style.NurseScreen>
       <Popup shown={popupShown} closePopup={closePopup}>

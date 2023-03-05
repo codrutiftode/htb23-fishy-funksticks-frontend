@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 
 function Header({}) {
-
+const t = useTranslate();
 const navigate = useNavigate();
 
 const homeClickHandler = () => {
@@ -13,7 +15,7 @@ const homeClickHandler = () => {
 //only if HomeButton = true
     return <Style.Container>
                 <Style.HomeButton onClick={homeClickHandler} >
-          <span class="material-symbols-outlined">logout</span></Style.HomeButton>
+          <span class="material-symbols-outlined">{t("logout")}</span></Style.HomeButton>
                 <Style.Clock>{(new Date()).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{(new Date()).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} </Style.Clock>
             </Style.Container>
 }
@@ -21,21 +23,16 @@ const homeClickHandler = () => {
 export default Header
 
 const Style = {
-    HBtnBg: styled.div`
-    `,
 
     HomeButton: styled.div`
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 5px;
         border: 3px solid ${(props) => props.theme.colors.secondary};
         border-radius:20%;
         color: ${(props) => props.theme.colors.secondary};
         `,
-
-    HomeButtonImg: styled.img`
-        height: 100%;
-    `,
-
     
     Clock: styled.div`
         display: inline-block;
@@ -51,7 +48,6 @@ const Style = {
         background: ${(props) => props.theme.colors.primary};
         height: 10vh;
         padding: 15px;
-        margin-bottom: 10%;
     `,
 
 }

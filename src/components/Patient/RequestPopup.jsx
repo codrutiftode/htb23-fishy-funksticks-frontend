@@ -1,8 +1,11 @@
 import SimpleButton from "../UI/SimpleButton";
 import MultiTextInput from "../UI/MultiTextInput";
 import styled from "styled-components";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function RequestPopup({closePopup}){
+    const t = useTranslate();
     const ClickHandler= () => {
         //close it!!;
         closePopup();
@@ -10,9 +13,9 @@ function RequestPopup({closePopup}){
 
     return(
         <Style.container>
-        <Style.question>Would you like to add any extra information?</Style.question>
-        <Style.input><MultiTextInput DEFAULT={"Add more detail here"} SIZE={"4em"}></MultiTextInput></Style.input>
-        <Style.btn><SimpleButton name={"Send Request"} width={"10em"} height={"4em"} fontSize={"1em"} borderRadius={"1em"} ClickHandler={ClickHandler} background={(props) => props.theme.colors.primary}></SimpleButton></Style.btn>
+        <Style.question>{t("extrainfo")}</Style.question>
+        <Style.input><MultiTextInput DEFAULT={t("adddeets")} SIZE={"4em"}></MultiTextInput></Style.input>
+        <Style.btn><SimpleButton name={t("sendrequest")} width={"10em"} height={"4em"} fontSize={"1em"} borderRadius={"1em"} ClickHandler={ClickHandler} background={(props) => props.theme.colors.primary}></SimpleButton></Style.btn>
         </Style.container>
     )
 }

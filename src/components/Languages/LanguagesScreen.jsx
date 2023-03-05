@@ -3,8 +3,12 @@ import LanguageItem from "./LanguageItem";
 import { LocalStorage } from "../../scripts/localStorage";
 import { useNavigate } from "react-router";
 import MainLayout from "../Layout/MainLayout";
+import { useTranslate } from "../../scripts/useTranslate";
 
+
+// unsure whether to translate the languages - got annoyed at me when I tried
 function LanguagesScreen() {
+  const t = useTranslate();
   const languages = [
     { name: "English", id: "en" },
     { name: "Romanian", id: "ro" },
@@ -14,7 +18,7 @@ function LanguagesScreen() {
 
   return (
     <MainLayout>
-      <Style.question>Preferred language...</Style.question>
+      <Style.question>{t("LanguagePref")}</Style.question>
       <Style.LanguagesList>
         {languages.map((language) => {
           const clickHandler = () => {
@@ -34,6 +38,7 @@ const Style = {
   question: styled.div`
     text-align: center;
     font-size: min(5vh, 10vw);
+    margin-top: 10vh;
   `,
 
   LanguagesList: styled.div`
