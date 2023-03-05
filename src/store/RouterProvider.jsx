@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <NurseScreen />,
   },
   {
-    path: "/options",
+    path: "/settings",
     element: <OptionsScreen />
   },
   {

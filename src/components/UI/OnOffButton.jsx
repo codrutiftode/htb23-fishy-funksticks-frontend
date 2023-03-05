@@ -3,7 +3,7 @@ import styled from "styled-components";
 function OnOffButton( {NAME, STATE, SetState} ){
 
     const ClickHandler = () => {
-        SetState(prev => !prev) //when the button is clicked, the state switches
+        SetState(); //when the button is clicked, the state switches
     }
 
 const ButtonON = STATE

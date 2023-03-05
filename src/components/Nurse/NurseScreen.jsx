@@ -19,7 +19,7 @@ function NurseScreen() {
         <OnOffButton
           NAME={"Pls Work"}
           STATE={Break}
-          SetState={SetBreak}
+          SetState={() => SetBreak((prev) => !prev)}
         ></OnOffButton>
         <PopUpButton name={"sKetchy"}></PopUpButton>
       </Style.OtherOptions>
