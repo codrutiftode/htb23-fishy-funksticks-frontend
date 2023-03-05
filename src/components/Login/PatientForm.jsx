@@ -50,6 +50,7 @@ function PatientForm(props) {
     <Style.Form>
       <p>{t("enterPatientID")}</p>
       <Style.Input><TextInput fontSize={"1em"} SIZE={"1em"} onTextChange={textChangeHandler}/></Style.Input>
+      {errorMessage && <Style.ErrorMessage>{errorMessage}</Style.ErrorMessage>}
       <SimpleButton name={"Submit"} width={"5em"} height={"2em"} fontSize={"1em"} borderRadius={"1em"} ClickHandler={ClickHandler} background={(props) => props.theme.colors.primary}></SimpleButton>
     </Style.Form>
   );
@@ -71,5 +72,11 @@ const Style= {
     justify-contents: space-inbetween;
     text-align: center;
     font-size: 3vh;
-  `
+  `,
+
+  ErrorMessage: styled.p`
+    color: red;
+    font-size: 1rem;
+    padding: 0.6rem;
+  `,
 }
