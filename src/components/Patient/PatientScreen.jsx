@@ -67,7 +67,7 @@ function PatientScreen(props) {
       <Style.HelpOptions>
         {buttonsData.map((buttonData, index) => {
           return (
-            <Style.GridItem index={index} BACKGROUND={"rgb(152,210,216)"} 
+            <Style.GridItem index={index} BACKGROUND={theme.colors.tertiary} 
             GRADIENT={"linear-gradient(to right,rgb(182,223,227)0%, rgb(152,210,216)50%, rgb(136,189,194)100%)"}>
               <PopupButton
                 key={buttonData.type}
