@@ -1,5 +1,5 @@
 import SimpleButton from "../UI/SimpleButton";
-import TextInput from "../UI/TextInput";
+import MultiTextInput from "../UI/MultiTextInput";
 import styled from "styled-components";
 
 function RequestPopup({closePopup}){
@@ -11,7 +11,7 @@ function RequestPopup({closePopup}){
     return(
         <Style.container>
         <Style.question>Would you like to add any extra information?</Style.question>
-        <Style.input><TextInput DEFAULT={"Add more detail here"} SIZE={"4em"} ></TextInput></Style.input>
+        <Style.input><MultiTextInput DEFAULT={"Add more detail here"} SIZE={"4em"} ></MultiTextInput></Style.input>
         <Style.btn><SimpleButton name={"Send Request"} width={"10em"} height={"4em"} fontSize={"1em"} borderRadius={"1em"} ClickHandler={ClickHandler} background={(props) => props.theme.colors.primary}></SimpleButton></Style.btn>
         </Style.container>
     )
