@@ -11,7 +11,7 @@ function RequestPopup({closePopup}){
     return(
         <Style.container>
         <Style.question>Would you like to add any extra information?</Style.question>
-        <Style.input><MultiTextInput DEFAULT={"Add more detail here"} SIZE={"4em"} ></MultiTextInput></Style.input>
+        <Style.input><MultiTextInput DEFAULT={"Add more detail here"} SIZE={"4em"}></MultiTextInput></Style.input>
         <Style.btn><SimpleButton name={"Send Request"} width={"10em"} height={"4em"} fontSize={"1em"} borderRadius={"1em"} ClickHandler={ClickHandler} background={(props) => props.theme.colors.primary}></SimpleButton></Style.btn>
         </Style.container>
     )
@@ -23,11 +23,9 @@ const Style = {
     container: styled.div`
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 5%;
-        padding-top: 30%;
-        padding-bottom: 30%;
         height: 100%;
     `,
 
@@ -39,6 +37,7 @@ const Style = {
 
     input: styled.div`
         display: inline-block;
+        margin-bottom: 0.4rem;
     `,
 
     btn: styled.div`
