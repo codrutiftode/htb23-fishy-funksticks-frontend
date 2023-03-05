@@ -69,8 +69,6 @@ function PatientScreen(props) {
 
   const closePopup = () => SetCurrentButtType(null);
 
-  const theme = useTheme();
-
   return (
     <MainLayout>
     <Style.PatientScreen>
