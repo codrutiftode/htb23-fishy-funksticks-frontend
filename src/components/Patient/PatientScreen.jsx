@@ -97,7 +97,7 @@ function PatientScreen() {
         <MenuOption
           name={t("settings")}
           alt="Settings icon"
-          src="/assets/settings-solid.svg"
+          src="/assets/settings-solid.png"
           onClick={settingsClickHandler}
           background = {theme.colors.primary}
           fontSize = "12px"
@@ -107,7 +107,7 @@ function PatientScreen() {
         <MenuOption
           name={t("infoicon")}
           alt="Info icon"
-          src="/assets/info-circle-outline.svg"
+          src="/assets/info-circle-outline.png"
           onClick={infoClickHandler}
           background = {theme.colors.primary}
           fontSize = "12px"
