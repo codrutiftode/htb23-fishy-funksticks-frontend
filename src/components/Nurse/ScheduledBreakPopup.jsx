@@ -10,7 +10,7 @@ function RequestPopup({ closePopup }) {
 
   return (
     <Style.container>
-      <Style.question>What time do you want to be away?</Style.question>
+      <Style.question>What time do you want to block out?</Style.question>
       <Style.TimeInputs>
         <Style.InputContainer>
           <span>Leave: </span>
@@ -23,7 +23,7 @@ function RequestPopup({ closePopup }) {
       </Style.TimeInputs>
       <Style.btn>
         <SimpleButton
-          name={"Take a break"}
+          name={"Set"}
           width={"10em"}
           height={"4em"}
           fontSize={"1em"}

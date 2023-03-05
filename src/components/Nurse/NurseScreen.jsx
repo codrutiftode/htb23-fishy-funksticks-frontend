@@ -27,11 +27,11 @@ function NurseScreen() {
         <NextTask />
         <Style.OtherOptions>
           <OnOffButton
-            NAME={"Pls Work"}
+            NAME={"Break"}
             STATE={Break}
             SetState={() => SetBreak((prev) => !prev)}
           ></OnOffButton>
-          <PopUpButton name={"sKetchy"} onClick={openPopup}></PopUpButton>
+          <PopUpButton name={"Schedule break"} onClick={openPopup}></PopUpButton>
         </Style.OtherOptions>
       </Style.NurseScreen>
       <Popup shown={popupShown} closePopup={closePopup}>
