@@ -1,5 +1,5 @@
 const constants = {
-  backendURL: "http://10.126.120.3:5000",
+  backendURL: "https://htb23-backend.onrender.com",
   theme: {
     colors: {
       primary: "rebeccapurple",
