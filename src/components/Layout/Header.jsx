@@ -38,6 +38,10 @@ const Style = {
         border: 3px solid ${(props) => props.theme.colors.secondary};
         border-radius:20%;
         color: ${(props) => props.theme.colors.secondary};
+
+        &:hover {
+            cursor: pointer;
+        }
         `,
     
     Clock: styled.div`
