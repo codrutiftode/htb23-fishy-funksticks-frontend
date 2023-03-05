@@ -40,7 +40,17 @@ function RequestPopup({closePopup, typeOfRequest}){
         <Style.question>{t("extrainfo")}</Style.question>
         <Style.input><MultiTextInput DEFAULT={t("adddeets")} SIZE={"4em"} onTextChange={textChangeHandler}></MultiTextInput></Style.input>
         {errorMessage && <Style.ErrorMessage>{errorMessage}</Style.ErrorMessage>}
-        <Style.btn><SimpleButton name={t("sendrequest")} width={"10em"} height={"4em"} fontSize={"1em"} borderRadius={"1em"} ClickHandler={ClickHandler} background={(props) => props.theme.colors.primary}></SimpleButton></Style.btn>
+        <Style.btn><SimpleButton 
+            name={t("sendrequest")}   
+            width={"10em"} 
+            height={"4em"} 
+            fontSize={"1em"} 
+            borderRadius={"1em"} 
+            ClickHandler={ClickHandler} 
+            background={(props) => props.theme.colors.primary}
+            border={"3px outset rgba(68, 34, 102, 0.75)"}
+        gradient={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
+            ></SimpleButton></Style.btn>
         </Style.container>
     )
 }
