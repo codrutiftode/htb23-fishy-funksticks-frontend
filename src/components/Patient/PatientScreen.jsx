@@ -85,7 +85,7 @@ function PatientScreen() {
                 fontSize = {"18px"}
                 borderRadius = {"10px"}
                 color = {"black"} 
-                padding = {"10% 40%"}
+                padding = {"20% 40%"}
                 border = {"3px outset rgba(68, 34, 102, 0.5)"}
                 //FIXME: emergency button is smaller than others
               />
