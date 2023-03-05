@@ -75,7 +75,7 @@ function NurseForm() {
       </Style.Input>
       {errorMessage && <Style.ErrorMessage>{errorMessage}</Style.ErrorMessage>}
       <SimpleButton
-        name={"Submit"}
+        name={t("submit")}
         ClickHandler={ClickHandler}
         width={"5em"}
         height={"2em"}
