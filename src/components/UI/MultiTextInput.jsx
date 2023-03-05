@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-function MultiTextInput( {DEFAULT, SIZE} ) {
-    return <Style.Resizable PADDING={SIZE} placeholder={DEFAULT} />;
+function MultiTextInput( {DEFAULT, SIZE, onTextChange} ) {
+    return <Style.Resizable PADDING={SIZE} placeholder={DEFAULT} onInput={onTextChange}/>;
 }
 
 export default MultiTextInput

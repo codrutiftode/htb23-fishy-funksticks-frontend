@@ -4,6 +4,7 @@ import SimpleButton from "../UI/SimpleButton";
 import { useNavigate } from "react-router-dom";
 import { useTranslate } from "../../scripts/useTranslate";
 import { useState } from "react";
+import { LocalStorage } from "../../scripts/localStorage";
 
 function PatientForm(props) {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ function PatientForm(props) {
 
   const ClickHandler = () => {
       // sends the information
+      LocalStorage.set("patient_id", patientId);
       navigate("/patient"); // needs to only execute if authenticated
   }
   return (

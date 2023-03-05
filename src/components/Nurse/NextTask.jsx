@@ -3,17 +3,17 @@ import SimpleButton from "../UI/SimpleButton";
 import { useTranslate } from "../../scripts/useTranslate";
 
 
-function NextTask({id, type, extrainfo}) {
+function NextTask({taskData}) {
   const t = useTranslate();
   return (
     <Style.NextTask>
       <Style.Vertical>
       <h3>{t("patientid")}</h3>
-        <p>{id}</p>
+        <p>{taskData.patient_id}</p>
         <h3>{t("requesttype")}</h3>
-        <p>{type}</p>
+        <p>{taskData.type_of_request}</p>
         <h3>{t("extrainfo")}</h3>
-        <p>{extrainfo}</p>
+        <p>{taskData.extra_info}</p>
       </Style.Vertical>
       <SimpleButton padding={"1rem"} name={t("done")} fontSize={"1em"} borderRadius={"1em"} background={(props) => props.theme.colors.primary} />
     </Style.NextTask>

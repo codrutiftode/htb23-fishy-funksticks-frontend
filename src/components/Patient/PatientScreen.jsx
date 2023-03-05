@@ -16,32 +16,32 @@ function PatientScreen(props) {
   const buttonsData = [
     {
       name: t("food"),
-      type: "food",
+      type: "FOOD",
       materialIcon: "lunch_dining",
     },
     {
       name: t("water"),
-      type: "water",
+      type: "WATER",
       materialIcon: "local_drink",
     },
     {
       name: t("toilet"),
-      type: "toilet",
+      type: "TOILET",
       materialIcon: "bathroom",
     },
     {
       name: t("meds"),
-      type: "medication",
+      type: "PAINKILLERS",
       materialIcon: "healing",
     },
     {
       name: t("assist"),
-      type: "physical_assistance",
+      type: "ASSISTANCE",
       materialIcon: "accessibility",
     },
     {
       name: t("emergency"),
-      type: "emergency",
+      type: "EMERGENCY",
       materialIcon: "emergency_home",
     },
   ];
@@ -104,7 +104,7 @@ function PatientScreen(props) {
       </Style.MenuOptions>
 
     <Popup shown={CurrentButtType !== null} closePopup={closePopup}>
-      <RequestPopup closePopup={closePopup}></RequestPopup>
+      <RequestPopup closePopup={closePopup} typeOfRequest={CurrentButtType}></RequestPopup>
     </Popup>
 
 
