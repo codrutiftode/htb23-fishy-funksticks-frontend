@@ -27,7 +27,7 @@ const Style = {
     height: ${ props => props.HEIGHT};
 
     font-family: ${props => props.theme.font.fontFamily};
-    color: ${props => props.theme.font.color};
+    color: ${props => props.COLOR};
     font-size: ${props => props.FONTSIZE};
 
     background-color: ${props => props.BACKGROUND}; 
@@ -44,7 +44,6 @@ const Style = {
     transition-duration: 0.4s;
     :hover {
         background-image: ${props => props.GRADIENT};
-        color: ${props => props.TEXTGRADIENT};
     }
 
 
