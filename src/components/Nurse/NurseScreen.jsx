@@ -10,6 +10,21 @@ import { useTranslate } from "../../scripts/useTranslate";
 import { ApiController } from "../../api/apiController";
 import constants from "../../constants";
 
+const getNextTask = async (saveFunc) => {
+  try {
+    const result = await ApiController.get(
+      constants.backendURL + "/api/get_next_task"
+    );
+    saveFunc(result.data);
+  } catch (err) {
+    if (err.response.status === 405) {
+      console.log(err);
+      saveFunc(false);
+    }
+    console.error(err);
+  }
+};
+
 function NurseScreen() {
   const t = useTranslate();
   const [Break, SetBreak] = useState(false);
@@ -18,17 +33,7 @@ function NurseScreen() {
   const theme = useTheme();
 
   useEffect(() => {
-    const getNextTask = async () => {
-      try {
-        const result = await ApiController.get(
-          constants.backendURL + "/api/get_next_task"
-        );
-        setCurrentTask(result.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    getNextTask();
+    getNextTask(setCurrentTask);
   }, []);
 
   const closePopup = () => {
@@ -39,12 +44,18 @@ function NurseScreen() {
     setPopupShown(true);
   };
 
+  const taskDoneClickHandler = () => {
+    getNextTask(setCurrentTask);
+  }
+
   return (
     <MainLayout>
       <Style.NurseScreen>
         <h2>[Nurse Name]</h2>
         <h3>{t("yournexttask")}</h3>
-        {currentTask ? <NextTask taskData={currentTask} /> : "Loading..."}
+        {currentTask === null && "Loading..."}
+        {currentTask === false && "No tasks at the moment."}
+        {currentTask && <NextTask taskData={currentTask} taskDoneClickHandler={taskDoneClickHandler} />}
         <Style.OtherOptions>
           <OnOffButton
             NAME={t("break")}
