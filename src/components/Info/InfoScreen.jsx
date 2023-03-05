@@ -4,6 +4,7 @@ import styled, { useTheme } from "styled-components";
 
 function InfoScreen() {
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const ClickHandler= () => {
     navigate("/patient");
