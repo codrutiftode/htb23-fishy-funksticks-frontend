@@ -1,4 +1,5 @@
 const constants = {
+  backendURL: "http://localhost:5000",
   theme: {
     colors: {
       primary: "rebeccapurple",
