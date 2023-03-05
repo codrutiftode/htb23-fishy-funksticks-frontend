@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-function SimpleButton( {padding, name, location, width, height, fontSize, borderRadius} ){
+function SimpleButton( {padding, name, location, width, height, 
+    fontSize, borderRadius, background, gradient, textGradient} ){
     const navigate = useNavigate();
 
     const ChangePage= () => {
@@ -11,7 +12,8 @@ function SimpleButton( {padding, name, location, width, height, fontSize, border
     return (
         <div>
             <Style.Custom SIZE={padding} onClick={ChangePage} WIDTH={width} 
-            HEIGHT={height} FONTSIZE={fontSize} BORDERRADIUS={borderRadius}> {name} </Style.Custom>
+            HEIGHT={height} FONTSIZE={fontSize} BORDERRADIUS={borderRadius} BACKGROUND={background}
+            GRADIENT={gradient} TEXTGRADIENT={textGradient}> {name} </Style.Custom>
         </div>
     );
 }
@@ -28,7 +30,7 @@ const Style = {
         color: ${props => props.theme.font.color};
         font-size: ${props => props.FONTSIZE};
 
-        background-color: ${props => props.theme.colors.primary}; 
+        background-color: ${props => props.BACKGROUND}; 
         border-radius: ${props => props.BORDERRADIUS};
         border: 5px outset rgb(68, 34, 102);
         box-shadow:
@@ -38,6 +40,13 @@ const Style = {
             9.8px 10.1px 27.9px rgba(0, 0, 0, 0.06),
             18.4px 18.8px 52.2px rgba(0, 0, 0, 0.072),
             44px 45px 125px rgba(0, 0, 0, 0.1);
+
+        transition-duration: 0.4s;
+        
+        :hover {
+            background-image: ${props => props.GRADIENT};
+            color: ${props => props.TEXTGRADIENT};
+        }
       
         `
 
