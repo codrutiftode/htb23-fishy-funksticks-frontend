@@ -3,6 +3,7 @@ const constants = {
     colors: {
       primary: "rebeccapurple",
       secondary: "white",
+      tertiary: "rgb(152,210,216)",
     },
     font:{
       color: "rgba(255, 255, 255, 1)",

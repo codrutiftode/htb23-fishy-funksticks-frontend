@@ -30,8 +30,22 @@ function NurseScreen() {
             NAME={"Break"}
             STATE={Break}
             SetState={() => SetBreak((prev) => !prev)}
+          width={"100px"} 
+          height={"50px"} 
+          fontSize={"12px"} 
+          borderRadius={"7px"}     
+          gradient1={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
+          gradient2={"linear-gradient(to right,rgb(182,223,227)0%, rgb(152,210,216)50%, rgb(136,189,194)100%)"}
           ></OnOffButton>
-          <PopUpButton name={"Schedule break"} onClick={openPopup}></PopUpButton>
+          <PopUpButton 
+          padding={"2rem"}
+          name={"Schedule break"} onClick={openPopup}
+          width={"100px"} 
+          height={"50px"} 
+          fontSize={"12px"} 
+          borderRadius={"7px"}     
+          gradient={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
+          ></PopUpButton>
         </Style.OtherOptions>
       </Style.NurseScreen>
       <Popup shown={popupShown} closePopup={closePopup}>
