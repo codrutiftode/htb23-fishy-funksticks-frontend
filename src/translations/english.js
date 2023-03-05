@@ -18,7 +18,6 @@ export const englishTranslations = {
 
   username:  "Enter username:",
   password:  "Enter password:",
-  submit:  "SUBMIT",
   invalidcred: "Invalid credentials, try again!",
   invalidval: "Please input valid values.",
 

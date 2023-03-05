@@ -17,7 +17,6 @@ export const romanianTranslations = {
   
     username:  "Introduceti numele de utilizator:",
     password:  "Introdu parola:",
-    submit:  "TRIMITE",
     invalidcred: "Acreditări nevalide, încercați din nou!",
     invalidval: "Vă rugăm să introduceți valori valide.",
   
