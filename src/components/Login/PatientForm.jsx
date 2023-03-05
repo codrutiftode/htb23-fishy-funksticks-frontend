@@ -6,8 +6,6 @@ import { useTranslate } from "../../scripts/useTranslate";
 import { ApiController } from "../../api/apiController";
 import constants from "../../constants";
 import { useState } from "react";
-import {ApiController} from "../../api/apiController";
-import constants from "../../constants";
 
 function PatientForm(props) {
   const navigate = useNavigate();

@@ -10,7 +10,7 @@ import MainLayout from "../Layout/MainLayout";
 import { useTranslate } from "../../scripts/useTranslate";
 
 
-function PatientScreen(props) {
+function PatientScreen() {
   const t = useTranslate();
 
   const buttonsData = [
@@ -45,10 +45,6 @@ function PatientScreen(props) {
       materialIcon: "emergency_home",
     },
   ];
-
-
-
-
 
   const navigate = useNavigate();
   const theme = useTheme();
@@ -89,6 +85,8 @@ function PatientScreen(props) {
                 fontSize = {"18px"}
                 borderRadius = {"10px"}
                 color = {"black"} 
+                padding = {"15% 40%"}
+                border = {"3px outset rgba(68, 34, 102, 0.5)"}
               />
             </Style.GridItem>
           );
@@ -100,12 +98,20 @@ function PatientScreen(props) {
           alt="Settings icon"
           src="/assets/settings-solid.svg"
           onClick={settingsClickHandler}
+          background = {theme.colors.primary}
+          fontSize = "12px"
+          borderRadius = "10px"
+          gradient = "linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"
         ></MenuOption>
         <MenuOption
           name={t("infoicon")}
           alt="Info icon"
           src="/assets/info-circle-outline.svg"
           onClick={infoClickHandler}
+          background = {theme.colors.primary}
+          fontSize = "12px"
+          borderRadius = "10px"
+          gradient = "linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"
         ></MenuOption>
       </Style.MenuOptions>
 
