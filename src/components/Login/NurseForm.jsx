@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ApiController } from "../../api/apiController";
 import constants from "../../constants";
 import { useTranslate } from "../../scripts/useTranslate";
+import { LocalStorage } from "../../scripts/localStorage";
 
 
 function NurseForm() {
@@ -43,13 +44,13 @@ function NurseForm() {
         nurse_id: username,
         nurse_password: password,
       });
-      console.log("oy", result);
     }
     catch(err) {
       console.error(err);
       setErrorMessage(t("invalidcred"));
       return;
     }
+    LocalStorage.set("nurse_id", username);
     navigate("/nurse"); // needs to only execute if authenticated
   };
 
