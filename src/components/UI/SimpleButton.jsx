@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
 function SimpleButton( {padding, name, width, height, 
-    fontSize, borderRadius, background, gradient, textGradient, ClickHandler} ){
+    fontSize, borderRadius, background, gradient, textGradient, border, ClickHandler} ){
     const navigate = useNavigate();
 
 
@@ -10,7 +10,7 @@ function SimpleButton( {padding, name, width, height,
         <div>
             <Style.Custom SIZE={padding} onClick={ClickHandler} WIDTH={width} 
             HEIGHT={height} FONTSIZE={fontSize} BORDERRADIUS={borderRadius} BACKGROUND={background}
-            GRADIENT={gradient} TEXTGRADIENT={textGradient}> {name} </Style.Custom>
+            GRADIENT={gradient} TEXTGRADIENT={textGradient} BORDER={border}> {name} </Style.Custom>
         </div>
     );
 }
@@ -29,7 +29,7 @@ const Style = {
 
         background-color: ${props => props.BACKGROUND}; 
         border-radius: ${props => props.BORDERRADIUS};
-        border: 5px outset rgb(68, 34, 102);
+        border: ${props => props.BORDER};
         box-shadow:
             1.2px 1.2px 3.5px rgba(0, 0, 0, 0.028),
             2.9px 3px 8.3px rgba(0, 0, 0, 0.04),

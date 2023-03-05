@@ -15,7 +15,16 @@ function NextTask({id, type, extrainfo}) {
         <h3>{t("extrainfo")}</h3>
         <p>{extrainfo}</p>
       </Style.Vertical>
-      <SimpleButton padding={"1rem"} name={t("done")} fontSize={"1em"} borderRadius={"1em"} background={(props) => props.theme.colors.primary} />
+      <SimpleButton 
+        padding={"1rem"} 
+        name={t("done")} 
+        fontSize={"1em"} 
+        borderRadius={"10px"} 
+        background={(props) => props.theme.colors.primary}
+        width={"100%"}
+        border={"3px outset rgba(68, 34, 102, 0.75)"}
+        gradient={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
+         />
     </Style.NextTask>
   );
 }
