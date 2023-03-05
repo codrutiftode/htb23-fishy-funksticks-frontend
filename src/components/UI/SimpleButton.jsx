@@ -1,17 +1,14 @@
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-function SimpleButton( {padding, name, location, width, height, 
-    fontSize, borderRadius, background, gradient, textGradient} ){
+function SimpleButton( {padding, name, width, height, 
+    fontSize, borderRadius, background, gradient, textGradient, ClickHandler} ){
     const navigate = useNavigate();
 
-    const ChangePage= () => {
-       navigate(location);
-    }
 
     return (
         <div>
-            <Style.Custom SIZE={padding} onClick={ChangePage} WIDTH={width} 
+            <Style.Custom SIZE={padding} onClick={ClickHandler} WIDTH={width} 
             HEIGHT={height} FONTSIZE={fontSize} BORDERRADIUS={borderRadius} BACKGROUND={background}
             GRADIENT={gradient} TEXTGRADIENT={textGradient}> {name} </Style.Custom>
         </div>
