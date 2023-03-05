@@ -10,6 +10,7 @@ function LanguageItem({language, onClick}) {
 export default LanguageItem;
 
 const Style = {
+  
   LanguageItem: styled.div`
     border: 1px solid black;
     border-radius: 4px;
