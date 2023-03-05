@@ -3,16 +3,27 @@ import styled from "styled-components";
 import NurseForm from "./NurseForm";
 import PatientForm from "./PatientForm";
 import Header from "../Header/Header";
+import { useState } from "react";
 
-
-function LoginScreen(userIsNurse)
+function LoginScreen()
 {
+
+    const [state, setState] = useState(false)
+
+    const clickNurse = () => {
+        setState("nurse")
+    }
+
+    const clickPatient = () => {
+        setState("patient")
+    }
+
     return <div><Style.IconButtonContainer>
-                <IconButton buttonText={"NURSE"} imgsrc={"nurse_emoji.png"}/>
-                <IconButton buttonText={"PATIENT"} imgsrc={"sick_emoji.png"}/>
+                <IconButton iconButtonClick={clickNurse} buttonText={"NURSE"} imgsrc={"nurse_emoji.png"} isDisabled={state=="patient"}/>
+                <IconButton iconButtonClick={clickPatient} buttonText={"PATIENT"} imgsrc={"sick_emoji.png"} isDisabled={state=="nurse"}/>
          </Style.IconButtonContainer>
 
-         <Style.FormContainer>{userIsNurse?<NurseForm/>:<PatientForm/>}</Style.FormContainer>
+         <Style.FormContainer>{(state=="nurse"?<NurseForm/>:(state=="patient"?<PatientForm/>:<div/>))}</Style.FormContainer>
          </div>
 }
 
