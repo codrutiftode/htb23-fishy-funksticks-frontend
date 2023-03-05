@@ -1,8 +1,11 @@
 import SimpleButton from "../UI/SimpleButton";
 import MultiTextInput from "../UI/MultiTextInput";
 import styled from "styled-components";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function RequestPopup({ closePopup }) {
+  const t = useTranslate();
   const ClickHandler = () => {
     //close it!!;
     closePopup();
@@ -10,14 +13,14 @@ function RequestPopup({ closePopup }) {
 
   return (
     <Style.container>
-      <Style.question>What time do you want to block out?</Style.question>
+      <Style.question>{t("timeblockedout")}</Style.question>
       <Style.TimeInputs>
         <Style.InputContainer>
-          <span>Leave: </span>
+          <span>{t("leave")} </span>
           <input type="time" />
         </Style.InputContainer>
         <Style.InputContainer>
-          <span>Return: </span>
+          <span>{t("return")} </span>
           <input type="time" />
         </Style.InputContainer>
       </Style.TimeInputs>

@@ -1,6 +1,8 @@
 import { hover } from "@testing-library/user-event/dist/hover";
 import styled from "styled-components";
 import ThemeProvider from "../../store/ThemeProvider";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function IconButton({imgsrc,isDisabled,iconButtonClick,buttonText}){
         return <Style.IconButton onClick={iconButtonClick}>

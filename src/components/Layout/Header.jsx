@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 
 function Header({}) {
-
+const t = useTranslate();
 const navigate = useNavigate();
 
 const homeClickHandler = () => {
@@ -13,7 +15,7 @@ const homeClickHandler = () => {
 //only if HomeButton = true
     return <Style.Container>
                 <Style.HomeButton onClick={homeClickHandler} >
-          <span class="material-symbols-outlined">logout</span></Style.HomeButton>
+          <span class="material-symbols-outlined">{t("logout")}</span></Style.HomeButton>
                 <Style.Clock>{(new Date()).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{(new Date()).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} </Style.Clock>
             </Style.Container>
 }

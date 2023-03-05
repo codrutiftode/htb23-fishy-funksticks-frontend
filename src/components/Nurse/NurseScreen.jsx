@@ -6,8 +6,11 @@ import NextTask from "./NextTask";
 import MainLayout from "../Layout/MainLayout";
 import Popup from "../UI/Popup";
 import ScheduledBreakPopup from "./ScheduledBreakPopup";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function NurseScreen() {
+  const t = useTranslate();
   const [Break, SetBreak] = useState(false);
   const [popupShown, setPopupShown] = useState(false);
 
@@ -23,11 +26,11 @@ function NurseScreen() {
     <MainLayout>
       <Style.NurseScreen>
         <h2>[Nurse Name]</h2>
-        <h3>Your next task</h3>
-        <NextTask id={13945861214} type={"Toilet"} extrainfo={"Just a number 1 please"}/>
+        <h3>{t("yournexttask")}</h3>
+        <NextTask />
         <Style.OtherOptions>
           <OnOffButton
-            NAME={"Break"}
+            NAME={t("break")}
             STATE={Break}
             SetState={() => SetBreak((prev) => !prev)}
           width={"100px"} 
@@ -39,7 +42,7 @@ function NurseScreen() {
           ></OnOffButton>
           <PopUpButton 
           padding={"2rem"}
-          name={"Schedule break"} onClick={openPopup}
+          name={t("schedulebreak")} onClick={openPopup}
           width={"100px"} 
           height={"50px"} 
           fontSize={"12px"} 

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function LanguageItem({language, onClick}) {
   return <Style.LanguageItem onClick={onClick}>

@@ -1,5 +1,7 @@
 import Header from "./Header";
 import styled from "styled-components";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function MainLayout(props) {
     return <Style.main>

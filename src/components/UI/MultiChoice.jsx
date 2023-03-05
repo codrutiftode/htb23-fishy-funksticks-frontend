@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import TextInput from "./TextInput";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function MultiChoice(props) {
+  const t = useTranslate();
   return (
     <Style.MultiChoice>
       {props.choices.map((choice, index) => {
@@ -22,9 +25,9 @@ function MultiChoice(props) {
                 <span class="material-symbols-outlined">check</span>
               )}
             </Style.ChoiceButton>
-            {choice.name === "Other" ? (
+            {choice.name === t("other") ? (
               <TextInput
-                DEFAULT={"Other"}
+                DEFAULT={t("other")}
                 SIZE="0.5rem"
                 onFocus={() => props.addChoice(choice)}
               />

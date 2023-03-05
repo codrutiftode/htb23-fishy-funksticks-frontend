@@ -5,10 +5,12 @@ import PatientForm from "./PatientForm";
 //import Header from "../Layout/Header";
 import { useState } from "react";
 import MainLayout from "../Layout/MainLayout";
+import { useTranslate } from "../../scripts/useTranslate";
+
 
 function LoginScreen()
 {
-
+    const t = useTranslate();
     const [state, setState] = useState(false)
 
     const clickNurse = () => {
@@ -20,10 +22,10 @@ function LoginScreen()
     }
 
     return <MainLayout>
-        <Style.IamA>I am a...</Style.IamA>
+        <Style.IamA>{t("iama")}</Style.IamA>
         <Style.IconButtonContainer>
-                <IconButton iconButtonClick={clickNurse} buttonText={"NURSE"} imgsrc={"assets/nurse_emoji.png"} isDisabled={state=="patient"}/>
-                <IconButton iconButtonClick={clickPatient} buttonText={"PATIENT"} imgsrc={"assets/sick_emoji.png"} isDisabled={state=="nurse"}/>
+                <IconButton iconButtonClick={clickNurse} buttonText={t("nurse")} imgsrc={"assets/nurse_emoji.png"} isDisabled={state=="patient"}/>
+                <IconButton iconButtonClick={clickPatient} buttonText={t("patient")} imgsrc={"assets/sick_emoji.png"} isDisabled={state=="nurse"}/>
          </Style.IconButtonContainer>
 
          <Style.FormContainer>{(state=="nurse"?<NurseForm/>:(state=="patient"?<PatientForm/>:<div/>))}</Style.FormContainer>
