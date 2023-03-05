@@ -60,7 +60,6 @@ const Style = {
             80%   {background-color: rgb(114,0,205);}
             90%   {background-color: rgb(205,0,179);}
             100% {background-color: rgb(205,0,0) ;}
-      
+        }
         `
-
 }
