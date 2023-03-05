@@ -42,6 +42,7 @@ const Style = {
         :hover {
             background-image: ${props => props.GRADIENT};
             color: ${props => props.TEXTGRADIENT};
+            cursor: pointer;
         }
       
         `

@@ -27,7 +27,8 @@ const Style = {
         border-radius: 5%;
 
         &:hover {
-            border: 3px solid ${(props) => props.theme.colors.secondary}
+            border: 3px solid ${(props) => props.theme.colors.secondary};
+            cursor: pointer;
         }
     `,
 

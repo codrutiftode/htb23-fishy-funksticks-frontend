@@ -30,7 +30,9 @@ function RequestPopup({ closePopup }) {
           width={"10em"}
           height={"4em"}
           fontSize={"1em"}
+          border={"4px outset rgba(68, 34, 102, 0.75)"}
           borderRadius={"1em"}
+          gradient={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
           ClickHandler={ClickHandler}
           background={(props) => props.theme.colors.primary}
         ></SimpleButton>

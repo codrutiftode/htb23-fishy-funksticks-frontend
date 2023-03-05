@@ -83,6 +83,8 @@ function NurseForm() {
         background={(props) => props.theme.colors.primary}
         fontSize={"1em"}
         borderRadius={"1em"}
+        border={"3px outset rgba(68, 34, 102, 0.75)"}
+        gradient={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
       ></SimpleButton>
     </Style.Form>
   );
