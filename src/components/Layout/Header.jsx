@@ -23,15 +23,14 @@ export default Header
 const Style = {
 
     HomeButton: styled.div`
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 5px;
         border: 3px solid ${(props) => props.theme.colors.secondary};
         border-radius:20%;
         color: ${(props) => props.theme.colors.secondary};
         `,
-
-    
-
     
     Clock: styled.div`
         display: inline-block;
