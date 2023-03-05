@@ -21,8 +21,6 @@ const homeClickHandler = () => {
 export default Header
 
 const Style = {
-    HBtnBg: styled.div`
-    `,
 
     HomeButton: styled.div`
         display: inline-block;
@@ -32,9 +30,7 @@ const Style = {
         color: ${(props) => props.theme.colors.secondary};
         `,
 
-    HomeButtonImg: styled.img`
-        height: 100%;
-    `,
+    
 
     
     Clock: styled.div`
