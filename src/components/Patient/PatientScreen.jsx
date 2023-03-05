@@ -76,9 +76,7 @@ function PatientScreen(props) {
       <Style.HelpOptions>
         {buttonsData.map((buttonData, index) => {
           return (
-            <Style.GridItem index={index} 
-            
->
+            <Style.GridItem index={index}>
               <PopupButton
                 key={buttonData.type}
                 name={buttonData.name}
@@ -90,7 +88,7 @@ function PatientScreen(props) {
                 height = {"100%"}
                 fontSize = {"18px"}
                 borderRadius = {"10px"}
-                color = {"black"}
+                color = {"black"} 
               />
             </Style.GridItem>
           );

@@ -3,13 +3,13 @@ import styled from "styled-components";
 function PopupButton({padding, width, height, fontSize, 
   borderRadius, gradient, name, onClick, materialIcon}) {
   return (
-    
+    <div>
     <Style.PopupButton onClick={onClick} SIZE={padding} WIDTH={width} HEIGHT={height}
     FONTSIZE={fontSize} BORDERRADIUS={borderRadius} GRADIENT={gradient}> 
       <span class="material-symbols-outlined">{materialIcon}</span>
       <p>{name}</p>
     </Style.PopupButton>
-    
+    </div>
   );
   }
 
@@ -27,6 +27,7 @@ const Style = {
     height: ${ props => props.HEIGHT};
 
     font-family: ${props => props.theme.font.fontFamily};
+    color: ${props => props.COLOR};
     color: ${props => props.COLOR};
     font-size: ${props => props.FONTSIZE};
 
