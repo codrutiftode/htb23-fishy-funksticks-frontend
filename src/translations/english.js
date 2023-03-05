@@ -36,7 +36,7 @@ export const englishTranslations = {
 
   neurodiverse:  "Neurodiverse",
   nonverbal:  "Nonverbal",
-  ESL:  "English as a second language",
+  ESL:  "Enlish as a second language",
   other:  "Other",
   dark:  "DARK",
   light:  "LIGHT",

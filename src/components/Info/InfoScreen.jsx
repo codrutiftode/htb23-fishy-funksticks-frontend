@@ -31,7 +31,16 @@ function InfoScreen() {
           <br/><br/>{t("info4")}
         </Style.P>
         <Style.btndiv>
-        <SimpleButton name={"Fun Button!"} width={"10em"} height={"4em"} fontSize={"1em"} borderRadius={"1em"} background={(props) => props.theme.colors.primary}></SimpleButton>
+        <SimpleButton 
+        name={"Fun Button!"} 
+        width={"10em"} 
+        height={"4em"} 
+        fontSize={"1em"} 
+        borderRadius={"1em"} 
+        background={(props) => props.theme.colors.primary}
+        border={"3px outset rgba(68, 34, 102, 0.75)"}
+        animation={"example"}
+        ></SimpleButton>
         </Style.btndiv>
     </Style.OptionsScreen>
 )
@@ -62,6 +71,7 @@ const Style = {
       cursor: pointer;
       padding: 0 1rem;
       margin-right: 0.4rem;
+    
     }
   `,
   P: styled.p`

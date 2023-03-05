@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-function SimpleButton( {padding, name, width, height, 
-    fontSize, borderRadius, background, gradient, textGradient, border, ClickHandler} ){
+function SimpleButton( {padding, name, width, height, fontSize, borderRadius, background, gradient, textGradient,
+    border, ClickHandler, animation} ){
     const navigate = useNavigate();
 
 
@@ -10,7 +10,7 @@ function SimpleButton( {padding, name, width, height,
         <div>
             <Style.Custom SIZE={padding} onClick={ClickHandler} WIDTH={width} 
             HEIGHT={height} FONTSIZE={fontSize} BORDERRADIUS={borderRadius} BACKGROUND={background}
-            GRADIENT={gradient} TEXTGRADIENT={textGradient} BORDER={border}> {name} </Style.Custom>
+            GRADIENT={gradient} TEXTGRADIENT={textGradient} BORDER={border} ANITMATION={animation}> {name} </Style.Custom>
         </div>
     );
 }
@@ -44,7 +44,22 @@ const Style = {
             color: ${props => props.TEXTGRADIENT};
             cursor: pointer;
         }
-      
-        `
 
+        animation-name: ${props => props.ANITMATION};
+        animation-duration: 20s;
+
+        @keyframes example {
+            0%   {background-color: rgb(205,0,0);}
+            10%   {background-color: rgb(205,111,0);}
+            20%  {background-color: rgb(248,222,0);}
+            30%   {background-color: rgb(205,183,0);}
+            40%   {background-color: rgb(10,205,0);}
+            50%  {background-color: rgb(0,205,144);}
+            60%   {background-color: rgb(0,112,205);}
+            70%   {background-color: rgb(0,4,205);}
+            80%   {background-color: rgb(114,0,205);}
+            90%   {background-color: rgb(205,0,179);}
+            100% {background-color: rgb(205,0,0) ;}
+        }
+        `
 }
