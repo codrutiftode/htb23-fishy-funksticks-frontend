@@ -6,6 +6,7 @@ import MenuOption from "./MenuOption";
 import RequestPopup from "./RequestPopup";
 import Popup from "../UI/Popup";
 import { useState } from "react";
+import MainLayout from "../Layout/MainLayout";
 
 const buttonsData = [
   {
@@ -60,6 +61,7 @@ function PatientScreen(props) {
   const closePopup = () => SetCurrentButtType(null);
 
   return (
+    <MainLayout>
     <Style.PatientScreen>
       <h2>Choose an option</h2>
       <Style.HelpOptions>
@@ -98,6 +100,7 @@ function PatientScreen(props) {
 
 
     </Style.PatientScreen>
+    </MainLayout>
   );
 }
 

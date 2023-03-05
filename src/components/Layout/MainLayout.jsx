@@ -1,10 +1,17 @@
 import Header from "./Header";
+import styled from "styled-components";
 
 function MainLayout(props) {
-    return <div>
+    return <Style.main>
             <Header/>
             {props.children}
-            </div>
+            </Style.main>
 }
 
 export default MainLayout
+
+const Style = {
+    main: styled.div`
+        height: 90%;
+    `
+}
