@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 function PopupButton(props) {
   return (
-    <Style.PopupButton>
+    <Style.PopupButton onClick={props.onClick}>
       <span class="material-symbols-outlined">{props.materialIcon}</span>
       <p>{props.name}</p>
     </Style.PopupButton>

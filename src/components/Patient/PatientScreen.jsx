@@ -3,6 +3,9 @@ import styled, { keyframes } from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
 import PopupButton from "../UI/PopupButton";
 import MenuOption from "./MenuOption";
+import RequestPopup from "./RequestPopup";
+import Popup from "../UI/Popup";
+import { useState } from "react";
 
 const buttonsData = [
   {
@@ -40,6 +43,8 @@ const buttonsData = [
 function PatientScreen() {
   const navigate = useNavigate();
 
+  const [CurrentButtType, SetCurrentButtType] = useState(null); // to do the state
+
   const settingsClickHandler = () => {
     navigate("/settings");
   };
@@ -47,6 +52,12 @@ function PatientScreen() {
   const infoClickHandler = () => {
     navigate("/info");
   };
+
+  const GeneralClickHandler = (buttonType) => {
+    SetCurrentButtType(buttonType);
+  }
+
+  const closePopup = () => SetCurrentButtType(null);
 
   return (
     <Style.PatientScreen>
@@ -59,6 +70,7 @@ function PatientScreen() {
                 key={buttonData.type}
                 name={buttonData.name}
                 materialIcon={buttonData.materialIcon}
+                onClick={() => GeneralClickHandler(buttonData.type)}
               />
             </Style.GridItem>
           );
@@ -78,6 +90,12 @@ function PatientScreen() {
           onClick={infoClickHandler}
         ></MenuOption>
       </Style.MenuOptions>
+
+    <Popup shown={CurrentButtType !== null} closePopup={closePopup}>
+      <RequestPopup closePopup={closePopup}></RequestPopup>
+    </Popup>
+
+
     </Style.PatientScreen>
   );
 }

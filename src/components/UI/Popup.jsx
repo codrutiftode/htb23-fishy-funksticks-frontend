@@ -3,11 +3,11 @@ import { breakpoint } from "styled-components-breakpoint";
 import { CSSTransition } from "react-transition-group";
 import { useRef } from "react";
 
-function Popup({ shown, setShown, children }) {
+function Popup({ shown, closePopup, children }) {
   const nodeRef = useRef(null);
 
   const backgroundClickHandler = () => {
-    setShown(false);
+    closePopup();
   };
 
   const contentClickHandler = (e) => {
