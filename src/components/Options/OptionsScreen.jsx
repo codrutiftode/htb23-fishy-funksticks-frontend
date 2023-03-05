@@ -10,7 +10,7 @@ import { useTranslate } from "../../scripts/useTranslate";
 function OptionsScreen() {
   const t = useTranslate();
 
-  const POSSIBLE_CHOICES = [
+  const POSSIBLE_CHOICES = [ 
     {
       name: t("neurodiverse"),
       isActive: false,
@@ -102,6 +102,13 @@ function OptionsScreen() {
         STATE={isDarkTheme}
         NAME={themeButtonText}
         SetState={setTheme}
+        width={"20%"}
+        height={"30px"}
+        fontSize
+        borderRadius={"10px"}
+        border={"3px outset rgba(68, 34, 102, 0.5)"}
+        gradient1={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
+            gradient2={"linear-gradient(to right,rgb(182,223,227)0%, rgb(152,210,216)50%, rgb(136,189,194)100%)"}
       />
     </Style.OptionsScreen>
   );
@@ -109,7 +116,7 @@ function OptionsScreen() {
 
 export default OptionsScreen;
 
-const Style = {
+const Style = { 
   OptionsScreen: styled.div`
     padding: 1rem;
 
@@ -122,13 +129,5 @@ const Style = {
     display: flex;
     flex-direction: row;
 
-    & button {
-      background-color: rgba(0, 0, 0, 0.1);
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 0 1rem;
-      margin-right: 0.4rem;
-    }
   `,
 };
