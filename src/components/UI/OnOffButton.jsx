@@ -26,10 +26,10 @@ const Style = {
        height: ${ props => props.HEIGHT};
 
        font-family: ${props => props.theme.font.fontFamily};
-       color: ${props => props.IsOn ? props.theme.font.color : "black"};
+       color: ${props => props.IsOn ? "black" : props.theme.font.color};
        font-size: ${props => props.FONTSIZE};
 
-       background-color: ${props => props.IsOn ? props.theme.colors.primary : props.theme.colors.tertiary}; 
+       background-color: ${props => props.IsOn ? props.theme.colors.tertiary : props.theme.colors.primary}; 
        border-radius: ${props => props.BORDERRADIUS};
        border: ${props => props.BORDER};
        box-shadow:
@@ -42,7 +42,7 @@ const Style = {
 
        transition-duration: 0.4s;
        :hover {
-           background-image: ${props => props.IsOn ? props.GRADIENT1 : props.GRADIENT2};
+           background-image: ${props => props.IsOn ? props.GRADIENT2 : props.GRADIENT1};
            cursor: pointer;
         }
     `

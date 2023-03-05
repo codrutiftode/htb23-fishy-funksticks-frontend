@@ -9,8 +9,8 @@ const sendRequest = async (url, method, data) => {
   return response;
 };
 
-const get = async (url) => {
-  const response = await sendRequest(url, "GET");
+const get = async (url, data) => {
+  const response = await sendRequest(url, "GET", data);
   return response;
 };
 

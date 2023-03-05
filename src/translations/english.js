@@ -48,7 +48,7 @@ export const englishTranslations = {
   toilet :  "Go toilet",
   meds:  "Get medication",
   assist:  "Physical assistance",
-  emergency:  "Emergency",
+  emergency:  "Emergency Emergency",
   settings:  "Settings",
   infoicon:  "Info",
 

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ApiController } from "../../api/apiController";
 import constants from "../../constants";
 import { useTranslate } from "../../scripts/useTranslate";
+import { LocalStorage } from "../../scripts/localStorage";
 
 
 function NurseForm() {
@@ -43,13 +44,13 @@ function NurseForm() {
         nurse_id: username,
         nurse_password: password,
       });
-      console.log("oy", result);
     }
     catch(err) {
       console.error(err);
       setErrorMessage(t("invalidcred"));
       return;
     }
+    LocalStorage.set("nurse_id", username);
     navigate("/nurse"); // needs to only execute if authenticated
   };
 
@@ -82,6 +83,8 @@ function NurseForm() {
         background={(props) => props.theme.colors.primary}
         fontSize={"1em"}
         borderRadius={"1em"}
+        border={"3px outset rgba(68, 34, 102, 0.75)"}
+        gradient={"linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"}
       ></SimpleButton>
     </Style.Form>
   );
