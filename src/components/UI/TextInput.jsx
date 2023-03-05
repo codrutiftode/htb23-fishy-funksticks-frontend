@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-function TextInput({ DEFAULT, SIZE, onFocus }) {
+function TextInput({ DEFAULT, SIZE, onFocus, onTextChange }) {
   return (
     <Style.Resizable
       PADDING={SIZE}
       type="text"
       placeholder={DEFAULT}
       onFocus={onFocus}
+      onInput={onTextChange}
     />
   );
 }

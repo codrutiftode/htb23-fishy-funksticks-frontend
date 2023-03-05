@@ -6,7 +6,13 @@ import { useTranslate } from "../../scripts/useTranslate";
 
 function PatientForm(props) {
   const navigate = useNavigate();
+  const [patientId, setPatientId] = useState("");
   const t = useTranslate();
+
+  const textChangeHandler = (e) => {
+    setPatientId(e.target.value.trim());
+  }
+
   const ClickHandler = () => {
       // sends the information
       navigate("/patient"); // needs to only execute if authenticated
@@ -14,7 +20,7 @@ function PatientForm(props) {
   return (
     <Style.Form>
       <p>{t("enterPatientID")}</p>
-      <Style.Input><TextInput fontSize={"1em"} SIZE={"1em"}/></Style.Input>
+      <Style.Input><TextInput fontSize={"1em"} SIZE={"1em"} onTextChange={textChangeHandler}/></Style.Input>
       <SimpleButton name={"Submit"} width={"5em"} height={"2em"} fontSize={"1em"} borderRadius={"1em"} ClickHandler={ClickHandler} background={(props) => props.theme.colors.primary}></SimpleButton>
     </Style.Form>
   );
