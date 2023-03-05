@@ -3,12 +3,14 @@ import { useState } from "react";
 import PopUpButton from "../UI/PopupButton";
 import styled from "styled-components";
 import NextTask from "./NextTask";
+import MainLayout from "../Layout/MainLayout";
 
 function NurseScreen() {
   const [Break, SetBreak] = useState(false);
   const [ShowPopup, SetShowPopup] = useState(false);
 
   return (
+    <MainLayout>
     <Style.NurseScreen>
       <h2>[Nurse Name]</h2>
       <h3>Your next task</h3>
@@ -22,7 +24,9 @@ function NurseScreen() {
         <PopUpButton name={"sKetchy"}></PopUpButton>
       </Style.OtherOptions>
     </Style.NurseScreen>
+    </MainLayout>
   );
+
 }
 
 export default NurseScreen;

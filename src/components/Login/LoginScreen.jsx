@@ -2,8 +2,9 @@ import IconButton from "./IconButton";
 import styled from "styled-components";
 import NurseForm from "./NurseForm";
 import PatientForm from "./PatientForm";
-import Header from "../Header/Header";
+import Header from "../Layout/Header";
 import { useState } from "react";
+import MainLayout from "../Layout/MainLayout";
 
 function LoginScreen()
 {
@@ -18,18 +19,25 @@ function LoginScreen()
         setState("patient")
     }
 
-    return <div><Style.IconButtonContainer>
-                <IconButton iconButtonClick={clickNurse} buttonText={"NURSE"} imgsrc={"nurse_emoji.png"} isDisabled={state=="patient"}/>
-                <IconButton iconButtonClick={clickPatient} buttonText={"PATIENT"} imgsrc={"sick_emoji.png"} isDisabled={state=="nurse"}/>
+    return <MainLayout>
+        <Style.IamA>I am a...</Style.IamA>
+        <Style.IconButtonContainer>
+                <IconButton iconButtonClick={clickNurse} buttonText={"NURSE"} imgsrc={"assets/nurse_emoji.png"} isDisabled={state=="patient"}/>
+                <IconButton iconButtonClick={clickPatient} buttonText={"PATIENT"} imgsrc={"assets/sick_emoji.png"} isDisabled={state=="nurse"}/>
          </Style.IconButtonContainer>
 
          <Style.FormContainer>{(state=="nurse"?<NurseForm/>:(state=="patient"?<PatientForm/>:<div/>))}</Style.FormContainer>
-         </div>
+         </MainLayout>
 }
 
 export default LoginScreen
 
 const Style = {
+    IamA: styled.div`
+        text-align: center;
+        font-size: 5vh;
+    `,
+
     IconButton: styled.div`
         display: inline-block;
         padding: 10%;
@@ -38,6 +46,7 @@ const Style = {
         display: flex;
         justify-content: center;
         margin-bottom: 10%;
+        margin-top: 10%;
     `,
     FormContainer: styled.div`
     display: flex;

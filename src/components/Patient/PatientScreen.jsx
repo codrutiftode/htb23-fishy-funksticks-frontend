@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme }from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
+import MainLayout from "../Layout/MainLayout";
 import PopupButton from "../UI/PopupButton";
 import MenuOption from "./MenuOption";
+import RequestPopup from "./RequestPopup";
+import Popup from "../UI/Popup";
+import { useState } from "react";
 
 const buttonsData = [
   {
@@ -40,6 +44,8 @@ const buttonsData = [
 function PatientScreen() {
   const navigate = useNavigate();
 
+  const [CurrentButtType, SetCurrentButtType] = useState(null); // to do the state
+
   const settingsClickHandler = () => {
     navigate("/settings");
   };
@@ -48,7 +54,16 @@ function PatientScreen() {
     navigate("/info");
   };
 
+  const GeneralClickHandler = (buttonType) => {
+    SetCurrentButtType(buttonType);
+  }
+
+  const closePopup = () => SetCurrentButtType(null);
+
+  const theme = useTheme();
+
   return (
+    <MainLayout>
     <Style.PatientScreen>
       <h2>Choose an option</h2>
       <Style.HelpOptions>
@@ -59,6 +74,7 @@ function PatientScreen() {
                 key={buttonData.type}
                 name={buttonData.name}
                 materialIcon={buttonData.materialIcon}
+                onClick={() => GeneralClickHandler(buttonData.type)}
               />
             </Style.GridItem>
           );
@@ -70,15 +86,32 @@ function PatientScreen() {
           alt="Settings icon"
           src="/assets/settings-solid.svg"
           onClick={settingsClickHandler}
+          fontsize="18px"
+          background={theme.colors.primary}
+          borderRadius="7px"
+          gradient="linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"
+          textGradient="white"
         ></MenuOption>
         <MenuOption
           name="Info"
           alt="Info icon"
           src="/assets/info-circle-outline.svg"
+          fontsize="18px"
+          background={theme.colors.primary}
+          borderRadius="7px"
+          gradient="linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"
+          textGradient="white"
           onClick={infoClickHandler}
         ></MenuOption>
       </Style.MenuOptions>
+
+    <Popup shown={CurrentButtType !== null} closePopup={closePopup}>
+      <RequestPopup closePopup={closePopup}></RequestPopup>
+    </Popup>
+
+
     </Style.PatientScreen>
+    </MainLayout>
   );
 }
 
