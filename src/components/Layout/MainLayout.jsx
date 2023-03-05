@@ -15,5 +15,6 @@ export default MainLayout
 const Style = {
     main: styled.div`
         height: 90%;
+        background: ${(props) => props.theme.colors.background}
     `
 }

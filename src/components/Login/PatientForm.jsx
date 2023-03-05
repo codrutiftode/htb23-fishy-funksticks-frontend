@@ -80,6 +80,7 @@ const Style = {
   Input: styled.div`
     margin-top: 10%;
     margin-bottom: 10%;
+    color: ${(props) => props.theme.colors.defaultfont};
   `,
 
   Form: styled.div`
@@ -89,6 +90,7 @@ const Style = {
     justify-contents: space-inbetween;
     text-align: center;
     font-size: 3vh;
+    color: ${(props) => props.theme.colors.defaultfont};
   `,
 
   ErrorMessage: styled.p`

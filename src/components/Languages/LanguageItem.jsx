@@ -18,6 +18,8 @@ const Style = {
     border-radius: 4px;
     padding: 8px;
   text-align: center;
+  background-color: #eff;
+  
 
         width: 80%;
         font-size: 5vh;

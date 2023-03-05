@@ -141,6 +141,7 @@ const gridItemAnim = keyframes`
 `;
 
 const Style = {
+
   PatientScreen: styled.div`
     height: 100%;
     padding: 1rem;
