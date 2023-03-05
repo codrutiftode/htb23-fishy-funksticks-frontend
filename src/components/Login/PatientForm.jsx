@@ -8,14 +8,40 @@ import { useState } from "react";
 function PatientForm(props) {
   const navigate = useNavigate();
   const [patientId, setPatientId] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
   const t = useTranslate();
 
   const textChangeHandler = (e) => {
     setPatientId(e.target.value.trim());
+    setErrorMessage(null);
   }
 
-  const ClickHandler = () => {
+
+  const validateInput = () => {
+    return patientId.length > 0;
+  };
+
+  const ClickHandler = async () => {
       // sends the information
+      const isValid = validateInput();
+    if (!isValid) {
+      setErrorMessage("Please input valid values.");
+      return;
+    }
+
+    // sends the information to backend
+    try {
+      const result = await ApiController.post(constants.backendURL + "/api/login", {
+        person: "PATIENT",
+        patient_id: patientId,
+      });
+      console.log("oy", result);
+    }
+    catch(err) {
+      console.error(err);
+      setErrorMessage("Invalid credentials, try again!");
+      return;
+    }
       navigate("/patient"); // needs to only execute if authenticated
   }
   return (
