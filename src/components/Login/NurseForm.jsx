@@ -1,6 +1,7 @@
 import SimpleButton from "../UI/SimpleButton";
 import TextInput from "../UI/TextInput";
 import { useNavigate } from "react-router";
+import styled from "styled-components";
 
 
 function NurseForm(){
@@ -11,15 +12,32 @@ function NurseForm(){
     }
 
     return(
-        <div>        
+        <Style.Form>        
         <p>Enter username:</p>
-        <TextInput DEFAULT={"Blah"} SIZE={"0.5em"}></TextInput>
+        <Style.Input><TextInput DEFAULT={"Blah"} fontSize={"1em"} SIZE={"1em"}></TextInput></Style.Input>
         <p>Enter password:</p>
-        <TextInput DEFAULT={"Blah Blah"} SIZE={"0.5em"}></TextInput>
-        <SimpleButton name={"Submit"} ClickHandler={ClickHandler}></SimpleButton>
-        </div>
+        <Style.Input><TextInput DEFAULT={"Blah Blah"} fontSize={"1em"} SIZE={"1em"}></TextInput></Style.Input>
+        <SimpleButton name={"Submit"} ClickHandler={ClickHandler} width={"5em"} height={"2em"} background={(props) => props.theme.colors.primary} fontSize={"1em"} borderRadius={"1em"}></SimpleButton>
+        </Style.Form>
 
     )
 }
 
 export default NurseForm
+
+const Style= {
+
+    Input: styled.div`
+      margin-top: 10%;
+      margin-bottom: 10%;
+    `,
+  
+    Form: styled.div`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-contents: space-inbetween;
+      text-align: center;
+      font-size: 3vh;
+    `
+  }

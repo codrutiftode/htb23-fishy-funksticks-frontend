@@ -10,6 +10,7 @@ function LanguagesScreen() {
 
   return (
     <MainLayout>
+    <Style.question>Preferred language...</Style.question>
     <Style.LanguagesList>
       {languages.map((language) => {
         const clickHandler = () => {
@@ -26,8 +27,16 @@ function LanguagesScreen() {
 export default LanguagesScreen;
 
 const Style = {
+
+  
+  question: styled.div`
+  text-align: center;
+  font-size: min(5vh,10vw);
+`,
+
   LanguagesList: styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
   `,
 };
