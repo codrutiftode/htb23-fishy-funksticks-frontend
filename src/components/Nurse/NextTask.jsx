@@ -12,7 +12,7 @@ function NextTask({id, type, extrainfo}) {
         <h3>Extra info</h3>
         <p>{extrainfo}</p>
       </Style.Vertical>
-      <SimpleButton padding={"2rem"} name="Mark as done" />
+      <SimpleButton padding={"1rem"} name="Mark as done" fontSize={"1em"} borderRadius={"1em"} background={(props) => props.theme.colors.primary} />
     </Style.NextTask>
   );
 }
