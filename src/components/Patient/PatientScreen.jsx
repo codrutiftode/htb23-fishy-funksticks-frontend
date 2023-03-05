@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import styled, { keyframes, useTheme }from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { breakpoint } from "styled-components-breakpoint";
-import MainLayout from "../Layout/MainLayout";
 import PopupButton from "../UI/PopupButton";
 import MenuOption from "./MenuOption";
 import RequestPopup from "./RequestPopup";
@@ -60,10 +59,7 @@ function PatientScreen(props) {
 
   const closePopup = () => SetCurrentButtType(null);
 
-  const theme = useTheme();
-
   return (
-    <MainLayout>
     <Style.PatientScreen>
       <h2>Choose an option</h2>
       <Style.HelpOptions>
@@ -87,21 +83,11 @@ function PatientScreen(props) {
           alt="Settings icon"
           src="/assets/settings-solid.svg"
           onClick={settingsClickHandler}
-          fontsize="18px"
-          background={theme.colors.primary}
-          borderRadius="7px"
-          gradient="linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"
-          textGradient="white"
         ></MenuOption>
         <MenuOption
           name="Info"
           alt="Info icon"
           src="/assets/info-circle-outline.svg"
-          fontsize="18px"
-          background={theme.colors.primary}
-          borderRadius="7px"
-          gradient="linear-gradient(to right,rgb(117,71,163)0%, rgb(92,46,138)50%, rgb(71,36,107)100%)"
-          textGradient="white"
           onClick={infoClickHandler}
         ></MenuOption>
       </Style.MenuOptions>
@@ -112,7 +98,6 @@ function PatientScreen(props) {
 
 
     </Style.PatientScreen>
-    </MainLayout>
   );
 }
 

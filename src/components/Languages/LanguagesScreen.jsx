@@ -5,21 +5,25 @@ import { useNavigate } from "react-router";
 import MainLayout from "../Layout/MainLayout";
 
 function LanguagesScreen() {
-  const languages = ["English", "Romanian", "French"];
+  const languages = [
+    { name: "English", id: "en" },
+    { name: "Romanian", id: "ro" },
+    { name: "French", id: "fr" },
+  ];
   const navigate = useNavigate();
 
   return (
     <MainLayout>
-    <Style.question>Preferred language...</Style.question>
-    <Style.LanguagesList>
-      {languages.map((language) => {
-        const clickHandler = () => {
-          LocalStorage.set("language", language);
-          navigate("/login");
-        };
-        return <LanguageItem language={language} onClick={clickHandler} />;
-      })}
-    </Style.LanguagesList>
+      <Style.question>Preferred language...</Style.question>
+      <Style.LanguagesList>
+        {languages.map((language) => {
+          const clickHandler = () => {
+            LocalStorage.set("language", language.id);
+            navigate("/login");
+          };
+          return <LanguageItem language={language.name} onClick={clickHandler} />;
+        })}
+      </Style.LanguagesList>
     </MainLayout>
   );
 }
@@ -27,12 +31,10 @@ function LanguagesScreen() {
 export default LanguagesScreen;
 
 const Style = {
-
-  
   question: styled.div`
-  text-align: center;
-  font-size: min(5vh,10vw);
-`,
+    text-align: center;
+    font-size: min(5vh, 10vw);
+  `,
 
   LanguagesList: styled.div`
     display: flex;
