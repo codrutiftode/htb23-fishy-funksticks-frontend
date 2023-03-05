@@ -24,7 +24,7 @@ function NurseScreen() {
       <Style.NurseScreen>
         <h2>[Nurse Name]</h2>
         <h3>Your next task</h3>
-        <NextTask />
+        <NextTask id={13945861214} type={"Toilet"} extrainfo={"Just a number 1 please"}/>
         <Style.OtherOptions>
           <OnOffButton
             NAME={"Break"}
