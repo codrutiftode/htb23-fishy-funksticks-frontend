@@ -1,5 +1,5 @@
 const constants = {
-  backendURL: "https://codrut.pythonanywhere.com",
+  backendURL: "http://10.126.120.3:5000",
   theme: {
     colors: {
       primary: "rebeccapurple",
