@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-function SimpleButton( {PADDING, NAME, LOCATION, CLICK} ){
+function SimpleButton( {padding, name, location, width, height, fontSize, borderRadius} ){
     const navigate = useNavigate();
 
     const ChangePage= () => {
-       navigate(LOCATION);
+       navigate(location);
     }
 
     return (
         <div>
-            <Style.Custom SIZE={PADDING} onClick={ChangePage}> {NAME} </Style.Custom>
+            <Style.Custom SIZE={padding} onClick={ChangePage} WIDTH={width} 
+            HEIGHT={height} FONTSIZE={fontSize} BORDERRADIUS={borderRadius}> {name} </Style.Custom>
         </div>
     );
 }
@@ -19,5 +20,25 @@ export default SimpleButton
 
 const Style = {
     Custom: styled.button`
-        padding: {SIZE}`
+        padding: ${ props => props.SIZE};
+        width: ${ props => props.WIDTH};
+        height: ${ props => props.HEIGHT};
+
+        font-family: ${props => props.theme.font.fontFamily};
+        color: ${props => props.theme.font.color};
+        font-size: ${props => props.FONTSIZE};
+
+        background-color: ${props => props.theme.colors.primary}; 
+        border-radius: ${props => props.BORDERRADIUS};
+        border: 5px outset rgb(68, 34, 102);
+        box-shadow:
+            1.2px 1.2px 3.5px rgba(0, 0, 0, 0.028),
+            2.9px 3px 8.3px rgba(0, 0, 0, 0.04),
+            5.5px 5.6px 15.7px rgba(0, 0, 0, 0.05),
+            9.8px 10.1px 27.9px rgba(0, 0, 0, 0.06),
+            18.4px 18.8px 52.2px rgba(0, 0, 0, 0.072),
+            44px 45px 125px rgba(0, 0, 0, 0.1);
+      
+        `
+
 }
