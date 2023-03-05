@@ -19,7 +19,9 @@ function LoginScreen()
         setState("patient")
     }
 
-    return <MainLayout><Style.IconButtonContainer>
+    return <MainLayout>
+        <Style.IamA>I am a...</Style.IamA>
+        <Style.IconButtonContainer>
                 <IconButton iconButtonClick={clickNurse} buttonText={"NURSE"} imgsrc={"assets/nurse_emoji.png"} isDisabled={state=="patient"}/>
                 <IconButton iconButtonClick={clickPatient} buttonText={"PATIENT"} imgsrc={"assets/sick_emoji.png"} isDisabled={state=="nurse"}/>
          </Style.IconButtonContainer>
@@ -31,6 +33,11 @@ function LoginScreen()
 export default LoginScreen
 
 const Style = {
+    IamA: styled.div`
+        text-align: center;
+        font-size: 5vh;
+    `,
+
     IconButton: styled.div`
         display: inline-block;
         padding: 10%;
@@ -39,6 +46,7 @@ const Style = {
         display: flex;
         justify-content: center;
         margin-bottom: 10%;
+        margin-top: 10%;
     `,
     FormContainer: styled.div`
     display: flex;
